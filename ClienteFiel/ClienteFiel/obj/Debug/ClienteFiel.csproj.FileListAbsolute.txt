@@ -106,3 +106,6 @@ D:\Repositorio\ClienteFiel\ClienteFiel - Black\ClienteFiel\obj\Debug\ClienteFiel
 D:\Repositorio\ClienteFiel\ClienteFiel - Black\ClienteFiel\obj\Debug\ClienteFiel.csproj.GenerateResource.Cache
 D:\Repositorio\ClienteFiel\ClienteFiel - Black\ClienteFiel\obj\Debug\ClienteFiel.exe
 D:\Repositorio\ClienteFiel\ClienteFiel - Black\ClienteFiel\obj\Debug\ClienteFiel.pdb
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\bin\Debug\ClienteFiel.exe.config
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\ClienteFiel.exe
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\ClienteFiel.pdb
