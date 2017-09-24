@@ -131,6 +131,18 @@
     <Compile Include="modulos\accesorias\SetTipoRedSocial.Designer.cs">
       <DependentUpon>SetTipoRedSocial.cs</DependentUpon>
     </Compile>
+    <Compile Include="modulos\configurar_producto\Productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modulos\configurar_producto\Productos.Designer.cs">
+      <DependentUpon>Productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrImagen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrImagen.Designer.cs">
+      <DependentUpon>ctrImagen.cs</DependentUpon>
+    </Compile>
     <Compile Include="modulos\empresa\GestionEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -265,6 +277,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="modulos\accesorias\SetTipoRedSocial.resx">
       <DependentUpon>SetTipoRedSocial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modulos\configurar_producto\Productos.resx">
+      <DependentUpon>Productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrImagen.resx">
+      <DependentUpon>ctrImagen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modulos\empresa\GestionEmpresa.resx">
       <DependentUpon>GestionEmpresa.cs</DependentUpon>
@@ -816,6 +834,10 @@
     <None Include="Resources\fondoVentana.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Controles\Controles.csproj">
+      <Project>{90919501-55F8-4D4D-B66F-A910012F2737}</Project>
+      <Name>Controles</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ServiciosWebClienteFiel\ServiciosWebClienteFiel.csproj">
       <Project>{69FF8A5C-040C-4E83-B498-E570B0D44FE7}</Project>
       <Name>ServiciosWebClienteFiel</Name>
@@ -863,6 +885,7 @@
   <ItemGroup>
     <None Include="Resources\removeImage2.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

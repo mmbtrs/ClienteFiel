@@ -1,4 +1,5 @@
 ﻿using ClienteFiel.modulos.accesorias;
+using ClienteFiel.modulos.configurar_producto;
 using ClienteFiel.modulos.empresa;
 using ClienteFiel.modulos.errores;
 using System;
@@ -65,6 +66,16 @@ namespace ClienteFiel
         {
             GestionEmpresa gestionEmpresa = new GestionEmpresa();
             gestionEmpresa.ShowDialog(this);
+        }
+
+        private void configuraciónDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Productos productos = new Productos();
+            productos.ShowDialog(this);
+        }
+
+        internal class modulos
+        {
         }
     }
 }

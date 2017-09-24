@@ -106,6 +106,40 @@ D:\Repositorio\ClienteFiel\ClienteFiel - Black\ClienteFiel\obj\Debug\ClienteFiel
 D:\Repositorio\ClienteFiel\ClienteFiel - Black\ClienteFiel\obj\Debug\ClienteFiel.csproj.GenerateResource.Cache
 D:\Repositorio\ClienteFiel\ClienteFiel - Black\ClienteFiel\obj\Debug\ClienteFiel.exe
 D:\Repositorio\ClienteFiel\ClienteFiel - Black\ClienteFiel\obj\Debug\ClienteFiel.pdb
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\ClienteFiel.ClienteFiel.resources
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\ClienteFiel.modulos.accesorias.GestionDepartamento.resources
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\ClienteFiel.modulos.accesorias.GestionMunicipio.resources
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\ClienteFiel.modulos.accesorias.GestionTipoActividad.resources
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\ClienteFiel.modulos.accesorias.GestionTipoIdentificacion.resources
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\ClienteFiel.modulos.accesorias.GestionTipoProducto.resources
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\ClienteFiel.modulos.accesorias.GestionTipoRedSocial.resources
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\ClienteFiel.modulos.accesorias.setDepartamento.resources
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\ClienteFiel.modulos.accesorias.setMunicipio.resources
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\ClienteFiel.modulos.accesorias.SetTipoActividad.resources
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\ClienteFiel.modulos.accesorias.SetTipoIdentificacion.resources
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\ClienteFiel.modulos.accesorias.SetTipoProducto.resources
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\ClienteFiel.modulos.accesorias.SetTipoRedSocial.resources
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\ClienteFiel.modulos.configurar_producto.Productos.resources
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\ClienteFiel.modulos.controles_usuario.ctrImagen.resources
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\ClienteFiel.modulos.empresa.GestionEmpresa.resources
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\ClienteFiel.modulos.empresa.SetEmpresa.resources
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\ClienteFiel.modulos.errores.GestionErrores.resources
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\ClienteFiel.modulos.errores.setErrores.resources
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\ClienteFiel.Properties.Resources.resources
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\ClienteFiel.utilidades.BaseAccesorias.resources
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\ClienteFiel.utilidades.ctrMunicipio.resources
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\ClienteFiel.utilidades.VentanaImagen.resources
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\ClienteFiel.csproj.GenerateResource.Cache
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\bin\Debug\ApplicationInsights.config
 D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\bin\Debug\ClienteFiel.exe.config
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\bin\Debug\ClienteFiel.exe
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\bin\Debug\ClienteFiel.pdb
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\bin\Debug\INIREADER.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\bin\Debug\ServiciosWebClienteFiel.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\bin\Debug\UtilidadesServiciosWeb.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\bin\Debug\ServiciosWebClienteFiel.pdb
 D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\ClienteFiel.exe
 D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\ClienteFiel.pdb
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\ClienteFiel.csprojResolveAssemblyReference.cache
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\bin\Debug\Controles.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\bin\Debug\Controles.pdb

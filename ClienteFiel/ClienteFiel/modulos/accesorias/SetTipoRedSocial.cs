@@ -63,9 +63,9 @@ namespace ClienteFiel.modulos.accesorias
                     lblTituloVentana.Text = "Edición Red Social";
                     txtNombreTipoRed.Text = tipoRed.NOM_TIPO_RED_SOCIAL;
                     if (imagen.IMAGEN != null && imagen.IMAGEN.Length > 0)
-                        picLogo.Image = utilidades.utilidades.byteToImagen(imagen.IMAGEN);
+                        ctrLogo.setImage(utilidades.utilidades.byteToImagen(imagen.IMAGEN));
                     else
-                        picLogo.Image = null;
+                        ctrLogo.setImage(null);
                 }
             }
             catch (Exception exp)
@@ -81,7 +81,7 @@ namespace ClienteFiel.modulos.accesorias
 
         private void editar()
         {
-            if (picLogo.Image != null)
+            if (ctrLogo.getImage() != null)
             {
                 ImagenResponse tmpImagenResponse = editarImagen();
                 if (tmpImagenResponse.correcto)
@@ -125,7 +125,7 @@ namespace ClienteFiel.modulos.accesorias
             try
             {
                 Imagen objImagen = new Imagen();
-                objImagen.IMAGEN = utilidades.utilidades.ImageToByte(picLogo.Image);
+                objImagen.IMAGEN = utilidades.utilidades.ImageToByte(ctrLogo.getImage());
                 if (imagen != null && imagen.ID_IMAGEN > 0)
                 {
                     objImagen.ID_IMAGEN = imagen.ID_IMAGEN;
@@ -152,7 +152,7 @@ namespace ClienteFiel.modulos.accesorias
 
         private void guardar()
         {
-            if (picLogo.Image != null)
+            if (ctrLogo.getImage() != null)
             {
                 ImagenResponse tmpImagenResponse = guardarImagen();
                 if (tmpImagenResponse.correcto)
@@ -162,7 +162,7 @@ namespace ClienteFiel.modulos.accesorias
                     {
                         utilidades.Mensajes.mensajeCorrecto("La nueva Red Social fue creada correctamente");
                         txtNombreTipoRed.Text = "";
-                        picLogo.Image = null;
+                        ctrLogo.setImage(null);
                     }
                     else
                     {
@@ -180,7 +180,7 @@ namespace ClienteFiel.modulos.accesorias
                 {
                     utilidades.Mensajes.mensajeCorrecto("La nueva Red Social fue creada correctamente");
                     txtNombreTipoRed.Text = "";
-                    picLogo.Image = null;
+                    ctrLogo.setImage(null);
                 }
                 else
                 {
@@ -244,7 +244,7 @@ namespace ClienteFiel.modulos.accesorias
             try
             {
                 Imagen objImagen = new Imagen();
-                objImagen.IMAGEN = utilidades.utilidades.ImageToByte(picLogo.Image);
+                objImagen.IMAGEN = utilidades.utilidades.ImageToByte(ctrLogo.getImage());
                 objResponse = serviciosImagen.crearImagen(objImagen);
                 return objResponse;
             }
@@ -262,31 +262,12 @@ namespace ClienteFiel.modulos.accesorias
         {
         }
 
-        private void cargarLogo()
-        {
-            try
-            {
-                if (openLogo.ShowDialog() == DialogResult.OK)
-                {
-                    picLogo.ImageLocation = openLogo.FileName;
-                }
-                else
-                    picLogo.Image = null;
-            }
-            catch (Exception exp)
-            {
-                utilidades.Mensajes.mensajeError(exp.Message);
-            }
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            cargarLogo();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            picLogo.Image = null;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

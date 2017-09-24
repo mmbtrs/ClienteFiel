@@ -1,0 +1,7 @@
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\Controles\bin\Debug\Controles.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\Controles\bin\Debug\Controles.pdb
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\Controles\obj\Debug\Controles.ctrImagen.resources
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\Controles\obj\Debug\Controles.Properties.Resources.resources
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\Controles\obj\Debug\Controles.csproj.GenerateResource.Cache
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\Controles\obj\Debug\Controles.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\Controles\obj\Debug\Controles.pdb
