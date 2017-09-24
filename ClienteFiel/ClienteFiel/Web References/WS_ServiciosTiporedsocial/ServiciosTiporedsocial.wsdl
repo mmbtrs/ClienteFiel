@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="crearTiporedsocial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Tiporedsocial" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Tiporedsocial">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_TIPO_RED_SOCIAL" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_IMAGEN" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOM_TIPO_RED_SOCIAL" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="crearTiporedsocialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crearTiporedsocialResult" type="tns:TiporedsocialResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TiporedsocialResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Response">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="objeto" type="tns:Tiporedsocial" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Response" abstract="true">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="correcto" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="error" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Autenticacion" type="tns:Autenticacion" />
+      <s:complexType name="Autenticacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="editarTiporedsocial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Tiporedsocial" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarTiporedsocialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="editarTiporedsocialResult" type="tns:TiporedsocialResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroTiporedsocial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Tiporedsocial" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroTiporedsocialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPrimeroTiporedsocialResult" type="tns:Tiporedsocial" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarTiporedsocial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Tiporedsocial" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarTiporedsocialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarTiporedsocialResult" type="tns:ArrayOfTiporedsocial" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTiporedsocial">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Tiporedsocial" nillable="true" type="tns:Tiporedsocial" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="buscarPaginacionTiporedsocial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Tiporedsocial" />
+            <s:element minOccurs="1" maxOccurs="1" name="pag" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numReg" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPaginacionTiporedsocialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPaginacionTiporedsocialResult" type="tns:ArrayOfTiporedsocial" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarTiporedsocial">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarTiporedsocialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarTiporedsocialResult" type="tns:ArrayOfTiporedsocial" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarPaginacionTiporedsocial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pag" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numReg" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarPaginacionTiporedsocialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarPaginacionTiporedsocialResult" type="tns:ArrayOfTiporedsocial" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contarBusquedaTiporedsocial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Tiporedsocial" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contarBusquedaTiporedsocialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="contarBusquedaTiporedsocialResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarTiporedsocial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Tiporedsocial" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarTiporedsocialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eliminarTiporedsocialResult" type="tns:TiporedsocialResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="crearTiporedsocialSoapIn">
+    <wsdl:part name="parameters" element="tns:crearTiporedsocial" />
+  </wsdl:message>
+  <wsdl:message name="crearTiporedsocialSoapOut">
+    <wsdl:part name="parameters" element="tns:crearTiporedsocialResponse" />
+  </wsdl:message>
+  <wsdl:message name="crearTiporedsocialAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="editarTiporedsocialSoapIn">
+    <wsdl:part name="parameters" element="tns:editarTiporedsocial" />
+  </wsdl:message>
+  <wsdl:message name="editarTiporedsocialSoapOut">
+    <wsdl:part name="parameters" element="tns:editarTiporedsocialResponse" />
+  </wsdl:message>
+  <wsdl:message name="editarTiporedsocialAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroTiporedsocialSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroTiporedsocial" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroTiporedsocialSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroTiporedsocialResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroTiporedsocialAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="buscarTiporedsocialSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarTiporedsocial" />
+  </wsdl:message>
+  <wsdl:message name="buscarTiporedsocialSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarTiporedsocialResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarTiporedsocialAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionTiporedsocialSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPaginacionTiporedsocial" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionTiporedsocialSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPaginacionTiporedsocialResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionTiporedsocialAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="listarTiporedsocialSoapIn">
+    <wsdl:part name="parameters" element="tns:listarTiporedsocial" />
+  </wsdl:message>
+  <wsdl:message name="listarTiporedsocialSoapOut">
+    <wsdl:part name="parameters" element="tns:listarTiporedsocialResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarTiporedsocialAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionTiporedsocialSoapIn">
+    <wsdl:part name="parameters" element="tns:listarPaginacionTiporedsocial" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionTiporedsocialSoapOut">
+    <wsdl:part name="parameters" element="tns:listarPaginacionTiporedsocialResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionTiporedsocialAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaTiporedsocialSoapIn">
+    <wsdl:part name="parameters" element="tns:contarBusquedaTiporedsocial" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaTiporedsocialSoapOut">
+    <wsdl:part name="parameters" element="tns:contarBusquedaTiporedsocialResponse" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaTiporedsocialAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="eliminarTiporedsocialSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarTiporedsocial" />
+  </wsdl:message>
+  <wsdl:message name="eliminarTiporedsocialSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarTiporedsocialResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarTiporedsocialAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:portType name="ServiciosTiporedsocialSoap">
+    <wsdl:operation name="crearTiporedsocial">
+      <wsdl:input message="tns:crearTiporedsocialSoapIn" />
+      <wsdl:output message="tns:crearTiporedsocialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="editarTiporedsocial">
+      <wsdl:input message="tns:editarTiporedsocialSoapIn" />
+      <wsdl:output message="tns:editarTiporedsocialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroTiporedsocial">
+      <wsdl:input message="tns:buscarPrimeroTiporedsocialSoapIn" />
+      <wsdl:output message="tns:buscarPrimeroTiporedsocialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarTiporedsocial">
+      <wsdl:input message="tns:buscarTiporedsocialSoapIn" />
+      <wsdl:output message="tns:buscarTiporedsocialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionTiporedsocial">
+      <wsdl:input message="tns:buscarPaginacionTiporedsocialSoapIn" />
+      <wsdl:output message="tns:buscarPaginacionTiporedsocialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarTiporedsocial">
+      <wsdl:input message="tns:listarTiporedsocialSoapIn" />
+      <wsdl:output message="tns:listarTiporedsocialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionTiporedsocial">
+      <wsdl:input message="tns:listarPaginacionTiporedsocialSoapIn" />
+      <wsdl:output message="tns:listarPaginacionTiporedsocialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaTiporedsocial">
+      <wsdl:input message="tns:contarBusquedaTiporedsocialSoapIn" />
+      <wsdl:output message="tns:contarBusquedaTiporedsocialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarTiporedsocial">
+      <wsdl:input message="tns:eliminarTiporedsocialSoapIn" />
+      <wsdl:output message="tns:eliminarTiporedsocialSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiciosTiporedsocialSoap" type="tns:ServiciosTiporedsocialSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearTiporedsocial">
+      <soap:operation soapAction="http://tempuri.org/crearTiporedsocial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:crearTiporedsocialAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarTiporedsocial">
+      <soap:operation soapAction="http://tempuri.org/editarTiporedsocial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:editarTiporedsocialAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroTiporedsocial">
+      <soap:operation soapAction="http://tempuri.org/buscarPrimeroTiporedsocial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:buscarPrimeroTiporedsocialAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarTiporedsocial">
+      <soap:operation soapAction="http://tempuri.org/buscarTiporedsocial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:buscarTiporedsocialAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionTiporedsocial">
+      <soap:operation soapAction="http://tempuri.org/buscarPaginacionTiporedsocial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:buscarPaginacionTiporedsocialAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarTiporedsocial">
+      <soap:operation soapAction="http://tempuri.org/listarTiporedsocial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:listarTiporedsocialAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionTiporedsocial">
+      <soap:operation soapAction="http://tempuri.org/listarPaginacionTiporedsocial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:listarPaginacionTiporedsocialAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaTiporedsocial">
+      <soap:operation soapAction="http://tempuri.org/contarBusquedaTiporedsocial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:contarBusquedaTiporedsocialAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarTiporedsocial">
+      <soap:operation soapAction="http://tempuri.org/eliminarTiporedsocial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:eliminarTiporedsocialAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiciosTiporedsocialSoap12" type="tns:ServiciosTiporedsocialSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearTiporedsocial">
+      <soap12:operation soapAction="http://tempuri.org/crearTiporedsocial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:crearTiporedsocialAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarTiporedsocial">
+      <soap12:operation soapAction="http://tempuri.org/editarTiporedsocial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:editarTiporedsocialAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroTiporedsocial">
+      <soap12:operation soapAction="http://tempuri.org/buscarPrimeroTiporedsocial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:buscarPrimeroTiporedsocialAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarTiporedsocial">
+      <soap12:operation soapAction="http://tempuri.org/buscarTiporedsocial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:buscarTiporedsocialAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionTiporedsocial">
+      <soap12:operation soapAction="http://tempuri.org/buscarPaginacionTiporedsocial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:buscarPaginacionTiporedsocialAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarTiporedsocial">
+      <soap12:operation soapAction="http://tempuri.org/listarTiporedsocial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:listarTiporedsocialAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionTiporedsocial">
+      <soap12:operation soapAction="http://tempuri.org/listarPaginacionTiporedsocial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:listarPaginacionTiporedsocialAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaTiporedsocial">
+      <soap12:operation soapAction="http://tempuri.org/contarBusquedaTiporedsocial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:contarBusquedaTiporedsocialAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarTiporedsocial">
+      <soap12:operation soapAction="http://tempuri.org/eliminarTiporedsocial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:eliminarTiporedsocialAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosTiporedsocial">
+    <wsdl:port name="ServiciosTiporedsocialSoap" binding="tns:ServiciosTiporedsocialSoap">
+      <soap:address location="http://localhost:51390/Servicios/ServiciosTiporedsocial.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiciosTiporedsocialSoap12" binding="tns:ServiciosTiporedsocialSoap12">
+      <soap12:address location="http://localhost:51390/Servicios/ServiciosTiporedsocial.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

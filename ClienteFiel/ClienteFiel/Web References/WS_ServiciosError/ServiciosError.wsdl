@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="crearError">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Error">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_ERROR" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="ERROR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MENSAJE_PARA_USUARIO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="POSIBLE_SOLUCION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CAMPO_DE_BUSQUEDA" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="crearErrorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crearErrorResult" type="tns:ErrorResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ErrorResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Response">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="objeto" type="tns:Error" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Response" abstract="true">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="correcto" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="numero" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Autenticacion" type="tns:Autenticacion" />
+      <s:complexType name="Autenticacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="editarError">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarErrorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="editarErrorResult" type="tns:ErrorResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroError">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroErrorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPrimeroErrorResult" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarError">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarErrorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarErrorResult" type="tns:ArrayOfError" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfError">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Error" nillable="true" type="tns:Error" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="buscarPaginacionError">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Error" />
+            <s:element minOccurs="1" maxOccurs="1" name="pag" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numReg" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPaginacionErrorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPaginacionErrorResult" type="tns:ArrayOfError" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarError">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarErrorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarErrorResult" type="tns:ArrayOfError" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarPaginacionError">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pag" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numReg" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarPaginacionErrorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarPaginacionErrorResult" type="tns:ArrayOfError" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contarBusquedaError">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contarBusquedaErrorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="contarBusquedaErrorResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarError">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Error" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarErrorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eliminarErrorResult" type="tns:ErrorResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="crearErrorSoapIn">
+    <wsdl:part name="parameters" element="tns:crearError" />
+  </wsdl:message>
+  <wsdl:message name="crearErrorSoapOut">
+    <wsdl:part name="parameters" element="tns:crearErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="crearErrorAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="editarErrorSoapIn">
+    <wsdl:part name="parameters" element="tns:editarError" />
+  </wsdl:message>
+  <wsdl:message name="editarErrorSoapOut">
+    <wsdl:part name="parameters" element="tns:editarErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="editarErrorAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroErrorSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroError" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroErrorSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroErrorAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="buscarErrorSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarError" />
+  </wsdl:message>
+  <wsdl:message name="buscarErrorSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarErrorAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionErrorSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPaginacionError" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionErrorSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPaginacionErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionErrorAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="listarErrorSoapIn">
+    <wsdl:part name="parameters" element="tns:listarError" />
+  </wsdl:message>
+  <wsdl:message name="listarErrorSoapOut">
+    <wsdl:part name="parameters" element="tns:listarErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarErrorAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionErrorSoapIn">
+    <wsdl:part name="parameters" element="tns:listarPaginacionError" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionErrorSoapOut">
+    <wsdl:part name="parameters" element="tns:listarPaginacionErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionErrorAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaErrorSoapIn">
+    <wsdl:part name="parameters" element="tns:contarBusquedaError" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaErrorSoapOut">
+    <wsdl:part name="parameters" element="tns:contarBusquedaErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaErrorAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="eliminarErrorSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarError" />
+  </wsdl:message>
+  <wsdl:message name="eliminarErrorSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarErrorAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:portType name="ServiciosErrorSoap">
+    <wsdl:operation name="crearError">
+      <wsdl:input message="tns:crearErrorSoapIn" />
+      <wsdl:output message="tns:crearErrorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="editarError">
+      <wsdl:input message="tns:editarErrorSoapIn" />
+      <wsdl:output message="tns:editarErrorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroError">
+      <wsdl:input message="tns:buscarPrimeroErrorSoapIn" />
+      <wsdl:output message="tns:buscarPrimeroErrorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarError">
+      <wsdl:input message="tns:buscarErrorSoapIn" />
+      <wsdl:output message="tns:buscarErrorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionError">
+      <wsdl:input message="tns:buscarPaginacionErrorSoapIn" />
+      <wsdl:output message="tns:buscarPaginacionErrorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarError">
+      <wsdl:input message="tns:listarErrorSoapIn" />
+      <wsdl:output message="tns:listarErrorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionError">
+      <wsdl:input message="tns:listarPaginacionErrorSoapIn" />
+      <wsdl:output message="tns:listarPaginacionErrorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaError">
+      <wsdl:input message="tns:contarBusquedaErrorSoapIn" />
+      <wsdl:output message="tns:contarBusquedaErrorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarError">
+      <wsdl:input message="tns:eliminarErrorSoapIn" />
+      <wsdl:output message="tns:eliminarErrorSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiciosErrorSoap" type="tns:ServiciosErrorSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearError">
+      <soap:operation soapAction="http://tempuri.org/crearError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:crearErrorAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarError">
+      <soap:operation soapAction="http://tempuri.org/editarError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:editarErrorAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroError">
+      <soap:operation soapAction="http://tempuri.org/buscarPrimeroError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:buscarPrimeroErrorAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarError">
+      <soap:operation soapAction="http://tempuri.org/buscarError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:buscarErrorAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionError">
+      <soap:operation soapAction="http://tempuri.org/buscarPaginacionError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:buscarPaginacionErrorAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarError">
+      <soap:operation soapAction="http://tempuri.org/listarError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:listarErrorAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionError">
+      <soap:operation soapAction="http://tempuri.org/listarPaginacionError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:listarPaginacionErrorAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaError">
+      <soap:operation soapAction="http://tempuri.org/contarBusquedaError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:contarBusquedaErrorAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarError">
+      <soap:operation soapAction="http://tempuri.org/eliminarError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:eliminarErrorAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiciosErrorSoap12" type="tns:ServiciosErrorSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearError">
+      <soap12:operation soapAction="http://tempuri.org/crearError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:crearErrorAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarError">
+      <soap12:operation soapAction="http://tempuri.org/editarError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:editarErrorAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroError">
+      <soap12:operation soapAction="http://tempuri.org/buscarPrimeroError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:buscarPrimeroErrorAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarError">
+      <soap12:operation soapAction="http://tempuri.org/buscarError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:buscarErrorAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionError">
+      <soap12:operation soapAction="http://tempuri.org/buscarPaginacionError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:buscarPaginacionErrorAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarError">
+      <soap12:operation soapAction="http://tempuri.org/listarError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:listarErrorAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionError">
+      <soap12:operation soapAction="http://tempuri.org/listarPaginacionError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:listarPaginacionErrorAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaError">
+      <soap12:operation soapAction="http://tempuri.org/contarBusquedaError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:contarBusquedaErrorAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarError">
+      <soap12:operation soapAction="http://tempuri.org/eliminarError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:eliminarErrorAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosError">
+    <wsdl:port name="ServiciosErrorSoap" binding="tns:ServiciosErrorSoap">
+      <soap:address location="http://localhost:51390/Servicios/ServiciosError.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiciosErrorSoap12" binding="tns:ServiciosErrorSoap12">
+      <soap12:address location="http://localhost:51390/Servicios/ServiciosError.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

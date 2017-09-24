@@ -1,0 +1,5 @@
+CREATE TABLE ROL (
+ID_ROL numeric ,
+NOM_ROL varchar (50),
+CONSTRAINT PRIMARY KEY(ID_ROL)
+)

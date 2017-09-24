@@ -1,0 +1,8 @@
+CREATE TABLE TOP (
+ID_TOP numeric ,
+ID_EMPRESA numeric ,
+ID_IMAGEN numeric ,
+NOM_TOP varchar (100),
+URL varchar (500),
+CONSTRAINT PRIMARY KEY(ID_TOP)
+)

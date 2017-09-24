@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="crearMunicipio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Municipio" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Municipio">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_MUNICIPIO" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_DEPARTAMENTO" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOM_MUNICIPIO" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="crearMunicipioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crearMunicipioResult" type="tns:MunicipioResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MunicipioResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Response">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="objeto" type="tns:Municipio" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Response" abstract="true">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="correcto" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="numero" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Autenticacion" type="tns:Autenticacion" />
+      <s:complexType name="Autenticacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="editarMunicipio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Municipio" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarMunicipioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="editarMunicipioResult" type="tns:MunicipioResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroMunicipio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Municipio" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroMunicipioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPrimeroMunicipioResult" type="tns:Municipio" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarMunicipio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Municipio" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarMunicipioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarMunicipioResult" type="tns:ArrayOfMunicipio" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMunicipio">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Municipio" nillable="true" type="tns:Municipio" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="buscarPaginacionMunicipio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Municipio" />
+            <s:element minOccurs="1" maxOccurs="1" name="pag" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numReg" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPaginacionMunicipioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPaginacionMunicipioResult" type="tns:ArrayOfMunicipio" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarMunicipio">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarMunicipioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarMunicipioResult" type="tns:ArrayOfMunicipio" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarPaginacionMunicipio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pag" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numReg" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarPaginacionMunicipioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarPaginacionMunicipioResult" type="tns:ArrayOfMunicipio" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contarBusquedaMunicipio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Municipio" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contarBusquedaMunicipioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="contarBusquedaMunicipioResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarMunicipio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Municipio" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarMunicipioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eliminarMunicipioResult" type="tns:MunicipioResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="crearMunicipioSoapIn">
+    <wsdl:part name="parameters" element="tns:crearMunicipio" />
+  </wsdl:message>
+  <wsdl:message name="crearMunicipioSoapOut">
+    <wsdl:part name="parameters" element="tns:crearMunicipioResponse" />
+  </wsdl:message>
+  <wsdl:message name="crearMunicipioAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="editarMunicipioSoapIn">
+    <wsdl:part name="parameters" element="tns:editarMunicipio" />
+  </wsdl:message>
+  <wsdl:message name="editarMunicipioSoapOut">
+    <wsdl:part name="parameters" element="tns:editarMunicipioResponse" />
+  </wsdl:message>
+  <wsdl:message name="editarMunicipioAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroMunicipioSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroMunicipio" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroMunicipioSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroMunicipioResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroMunicipioAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="buscarMunicipioSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarMunicipio" />
+  </wsdl:message>
+  <wsdl:message name="buscarMunicipioSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarMunicipioResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarMunicipioAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionMunicipioSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPaginacionMunicipio" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionMunicipioSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPaginacionMunicipioResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionMunicipioAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="listarMunicipioSoapIn">
+    <wsdl:part name="parameters" element="tns:listarMunicipio" />
+  </wsdl:message>
+  <wsdl:message name="listarMunicipioSoapOut">
+    <wsdl:part name="parameters" element="tns:listarMunicipioResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarMunicipioAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionMunicipioSoapIn">
+    <wsdl:part name="parameters" element="tns:listarPaginacionMunicipio" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionMunicipioSoapOut">
+    <wsdl:part name="parameters" element="tns:listarPaginacionMunicipioResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionMunicipioAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaMunicipioSoapIn">
+    <wsdl:part name="parameters" element="tns:contarBusquedaMunicipio" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaMunicipioSoapOut">
+    <wsdl:part name="parameters" element="tns:contarBusquedaMunicipioResponse" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaMunicipioAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="eliminarMunicipioSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarMunicipio" />
+  </wsdl:message>
+  <wsdl:message name="eliminarMunicipioSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarMunicipioResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarMunicipioAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:portType name="ServiciosMunicipioSoap">
+    <wsdl:operation name="crearMunicipio">
+      <wsdl:input message="tns:crearMunicipioSoapIn" />
+      <wsdl:output message="tns:crearMunicipioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="editarMunicipio">
+      <wsdl:input message="tns:editarMunicipioSoapIn" />
+      <wsdl:output message="tns:editarMunicipioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroMunicipio">
+      <wsdl:input message="tns:buscarPrimeroMunicipioSoapIn" />
+      <wsdl:output message="tns:buscarPrimeroMunicipioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarMunicipio">
+      <wsdl:input message="tns:buscarMunicipioSoapIn" />
+      <wsdl:output message="tns:buscarMunicipioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionMunicipio">
+      <wsdl:input message="tns:buscarPaginacionMunicipioSoapIn" />
+      <wsdl:output message="tns:buscarPaginacionMunicipioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarMunicipio">
+      <wsdl:input message="tns:listarMunicipioSoapIn" />
+      <wsdl:output message="tns:listarMunicipioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionMunicipio">
+      <wsdl:input message="tns:listarPaginacionMunicipioSoapIn" />
+      <wsdl:output message="tns:listarPaginacionMunicipioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaMunicipio">
+      <wsdl:input message="tns:contarBusquedaMunicipioSoapIn" />
+      <wsdl:output message="tns:contarBusquedaMunicipioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarMunicipio">
+      <wsdl:input message="tns:eliminarMunicipioSoapIn" />
+      <wsdl:output message="tns:eliminarMunicipioSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiciosMunicipioSoap" type="tns:ServiciosMunicipioSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearMunicipio">
+      <soap:operation soapAction="http://tempuri.org/crearMunicipio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:crearMunicipioAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarMunicipio">
+      <soap:operation soapAction="http://tempuri.org/editarMunicipio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:editarMunicipioAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroMunicipio">
+      <soap:operation soapAction="http://tempuri.org/buscarPrimeroMunicipio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:buscarPrimeroMunicipioAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarMunicipio">
+      <soap:operation soapAction="http://tempuri.org/buscarMunicipio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:buscarMunicipioAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionMunicipio">
+      <soap:operation soapAction="http://tempuri.org/buscarPaginacionMunicipio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:buscarPaginacionMunicipioAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarMunicipio">
+      <soap:operation soapAction="http://tempuri.org/listarMunicipio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:listarMunicipioAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionMunicipio">
+      <soap:operation soapAction="http://tempuri.org/listarPaginacionMunicipio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:listarPaginacionMunicipioAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaMunicipio">
+      <soap:operation soapAction="http://tempuri.org/contarBusquedaMunicipio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:contarBusquedaMunicipioAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarMunicipio">
+      <soap:operation soapAction="http://tempuri.org/eliminarMunicipio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:eliminarMunicipioAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiciosMunicipioSoap12" type="tns:ServiciosMunicipioSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearMunicipio">
+      <soap12:operation soapAction="http://tempuri.org/crearMunicipio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:crearMunicipioAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarMunicipio">
+      <soap12:operation soapAction="http://tempuri.org/editarMunicipio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:editarMunicipioAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroMunicipio">
+      <soap12:operation soapAction="http://tempuri.org/buscarPrimeroMunicipio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:buscarPrimeroMunicipioAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarMunicipio">
+      <soap12:operation soapAction="http://tempuri.org/buscarMunicipio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:buscarMunicipioAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionMunicipio">
+      <soap12:operation soapAction="http://tempuri.org/buscarPaginacionMunicipio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:buscarPaginacionMunicipioAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarMunicipio">
+      <soap12:operation soapAction="http://tempuri.org/listarMunicipio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:listarMunicipioAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionMunicipio">
+      <soap12:operation soapAction="http://tempuri.org/listarPaginacionMunicipio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:listarPaginacionMunicipioAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaMunicipio">
+      <soap12:operation soapAction="http://tempuri.org/contarBusquedaMunicipio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:contarBusquedaMunicipioAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarMunicipio">
+      <soap12:operation soapAction="http://tempuri.org/eliminarMunicipio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:eliminarMunicipioAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosMunicipio">
+    <wsdl:port name="ServiciosMunicipioSoap" binding="tns:ServiciosMunicipioSoap">
+      <soap:address location="http://localhost:51390/Servicios/ServiciosMunicipio.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiciosMunicipioSoap12" binding="tns:ServiciosMunicipioSoap12">
+      <soap12:address location="http://localhost:51390/Servicios/ServiciosMunicipio.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="crearEmpresa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Empresa" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Empresa">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_EMPRESA" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_MUNICIPIO" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_IMAGEN" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_REDES_SOCIALES" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="NIT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RAZON_SOCIAL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DIRECCION_CLIENTE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TELEFONO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SLOGAN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LATITUD" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LONGITUD" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SUCURSAL" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="crearEmpresaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crearEmpresaResult" type="tns:EmpresaResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="EmpresaResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Response">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="objeto" type="tns:Empresa" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Response" abstract="true">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="correcto" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="numero" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Autenticacion" type="tns:Autenticacion" />
+      <s:complexType name="Autenticacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="editarEmpresa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Empresa" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarEmpresaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="editarEmpresaResult" type="tns:EmpresaResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroEmpresa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Empresa" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroEmpresaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPrimeroEmpresaResult" type="tns:Empresa" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarEmpresa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Empresa" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarEmpresaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarEmpresaResult" type="tns:ArrayOfEmpresa" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfEmpresa">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Empresa" nillable="true" type="tns:Empresa" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="buscarPaginacionEmpresa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Empresa" />
+            <s:element minOccurs="1" maxOccurs="1" name="pag" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numReg" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPaginacionEmpresaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPaginacionEmpresaResult" type="tns:ArrayOfEmpresa" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarEmpresa">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarEmpresaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarEmpresaResult" type="tns:ArrayOfEmpresa" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarPaginacionEmpresa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pag" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numReg" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarPaginacionEmpresaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarPaginacionEmpresaResult" type="tns:ArrayOfEmpresa" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contarBusquedaEmpresa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Empresa" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contarBusquedaEmpresaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="contarBusquedaEmpresaResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarEmpresa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Empresa" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarEmpresaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eliminarEmpresaResult" type="tns:EmpresaResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="crearEmpresaSoapIn">
+    <wsdl:part name="parameters" element="tns:crearEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="crearEmpresaSoapOut">
+    <wsdl:part name="parameters" element="tns:crearEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="crearEmpresaAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="editarEmpresaSoapIn">
+    <wsdl:part name="parameters" element="tns:editarEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="editarEmpresaSoapOut">
+    <wsdl:part name="parameters" element="tns:editarEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="editarEmpresaAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroEmpresaSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroEmpresaSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroEmpresaAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="buscarEmpresaSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="buscarEmpresaSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarEmpresaAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionEmpresaSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPaginacionEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionEmpresaSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPaginacionEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionEmpresaAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="listarEmpresaSoapIn">
+    <wsdl:part name="parameters" element="tns:listarEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="listarEmpresaSoapOut">
+    <wsdl:part name="parameters" element="tns:listarEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarEmpresaAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionEmpresaSoapIn">
+    <wsdl:part name="parameters" element="tns:listarPaginacionEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionEmpresaSoapOut">
+    <wsdl:part name="parameters" element="tns:listarPaginacionEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionEmpresaAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaEmpresaSoapIn">
+    <wsdl:part name="parameters" element="tns:contarBusquedaEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaEmpresaSoapOut">
+    <wsdl:part name="parameters" element="tns:contarBusquedaEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaEmpresaAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="eliminarEmpresaSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="eliminarEmpresaSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarEmpresaAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:portType name="ServiciosEmpresaSoap">
+    <wsdl:operation name="crearEmpresa">
+      <wsdl:input message="tns:crearEmpresaSoapIn" />
+      <wsdl:output message="tns:crearEmpresaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="editarEmpresa">
+      <wsdl:input message="tns:editarEmpresaSoapIn" />
+      <wsdl:output message="tns:editarEmpresaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroEmpresa">
+      <wsdl:input message="tns:buscarPrimeroEmpresaSoapIn" />
+      <wsdl:output message="tns:buscarPrimeroEmpresaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarEmpresa">
+      <wsdl:input message="tns:buscarEmpresaSoapIn" />
+      <wsdl:output message="tns:buscarEmpresaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionEmpresa">
+      <wsdl:input message="tns:buscarPaginacionEmpresaSoapIn" />
+      <wsdl:output message="tns:buscarPaginacionEmpresaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarEmpresa">
+      <wsdl:input message="tns:listarEmpresaSoapIn" />
+      <wsdl:output message="tns:listarEmpresaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionEmpresa">
+      <wsdl:input message="tns:listarPaginacionEmpresaSoapIn" />
+      <wsdl:output message="tns:listarPaginacionEmpresaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaEmpresa">
+      <wsdl:input message="tns:contarBusquedaEmpresaSoapIn" />
+      <wsdl:output message="tns:contarBusquedaEmpresaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarEmpresa">
+      <wsdl:input message="tns:eliminarEmpresaSoapIn" />
+      <wsdl:output message="tns:eliminarEmpresaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiciosEmpresaSoap" type="tns:ServiciosEmpresaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearEmpresa">
+      <soap:operation soapAction="http://tempuri.org/crearEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:crearEmpresaAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarEmpresa">
+      <soap:operation soapAction="http://tempuri.org/editarEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:editarEmpresaAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroEmpresa">
+      <soap:operation soapAction="http://tempuri.org/buscarPrimeroEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:buscarPrimeroEmpresaAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarEmpresa">
+      <soap:operation soapAction="http://tempuri.org/buscarEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:buscarEmpresaAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionEmpresa">
+      <soap:operation soapAction="http://tempuri.org/buscarPaginacionEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:buscarPaginacionEmpresaAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarEmpresa">
+      <soap:operation soapAction="http://tempuri.org/listarEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:listarEmpresaAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionEmpresa">
+      <soap:operation soapAction="http://tempuri.org/listarPaginacionEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:listarPaginacionEmpresaAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaEmpresa">
+      <soap:operation soapAction="http://tempuri.org/contarBusquedaEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:contarBusquedaEmpresaAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarEmpresa">
+      <soap:operation soapAction="http://tempuri.org/eliminarEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:eliminarEmpresaAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiciosEmpresaSoap12" type="tns:ServiciosEmpresaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearEmpresa">
+      <soap12:operation soapAction="http://tempuri.org/crearEmpresa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:crearEmpresaAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarEmpresa">
+      <soap12:operation soapAction="http://tempuri.org/editarEmpresa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:editarEmpresaAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroEmpresa">
+      <soap12:operation soapAction="http://tempuri.org/buscarPrimeroEmpresa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:buscarPrimeroEmpresaAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarEmpresa">
+      <soap12:operation soapAction="http://tempuri.org/buscarEmpresa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:buscarEmpresaAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionEmpresa">
+      <soap12:operation soapAction="http://tempuri.org/buscarPaginacionEmpresa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:buscarPaginacionEmpresaAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarEmpresa">
+      <soap12:operation soapAction="http://tempuri.org/listarEmpresa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:listarEmpresaAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionEmpresa">
+      <soap12:operation soapAction="http://tempuri.org/listarPaginacionEmpresa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:listarPaginacionEmpresaAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaEmpresa">
+      <soap12:operation soapAction="http://tempuri.org/contarBusquedaEmpresa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:contarBusquedaEmpresaAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarEmpresa">
+      <soap12:operation soapAction="http://tempuri.org/eliminarEmpresa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:eliminarEmpresaAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosEmpresa">
+    <wsdl:port name="ServiciosEmpresaSoap" binding="tns:ServiciosEmpresaSoap">
+      <soap:address location="http://localhost:51390/Servicios/ServiciosEmpresa.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiciosEmpresaSoap12" binding="tns:ServiciosEmpresaSoap12">
+      <soap12:address location="http://localhost:51390/Servicios/ServiciosEmpresa.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

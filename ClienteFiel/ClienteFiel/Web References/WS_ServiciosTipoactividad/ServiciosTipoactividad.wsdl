@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="crearTipoactividad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Tipoactividad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Tipoactividad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_TIPO_ACTIVIDAD" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOM_TIPO_ACTIVIDAD" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="crearTipoactividadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crearTipoactividadResult" type="tns:TipoactividadResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TipoactividadResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Response">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="objeto" type="tns:Tipoactividad" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Response" abstract="true">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="correcto" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="error" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Autenticacion" type="tns:Autenticacion" />
+      <s:complexType name="Autenticacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="editarTipoactividad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Tipoactividad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarTipoactividadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="editarTipoactividadResult" type="tns:TipoactividadResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroTipoactividad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Tipoactividad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroTipoactividadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPrimeroTipoactividadResult" type="tns:Tipoactividad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarTipoactividad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Tipoactividad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarTipoactividadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarTipoactividadResult" type="tns:ArrayOfTipoactividad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTipoactividad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Tipoactividad" nillable="true" type="tns:Tipoactividad" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="buscarPaginacionTipoactividad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Tipoactividad" />
+            <s:element minOccurs="1" maxOccurs="1" name="pag" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numReg" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPaginacionTipoactividadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPaginacionTipoactividadResult" type="tns:ArrayOfTipoactividad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarTipoactividad">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarTipoactividadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarTipoactividadResult" type="tns:ArrayOfTipoactividad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarPaginacionTipoactividad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pag" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numReg" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarPaginacionTipoactividadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarPaginacionTipoactividadResult" type="tns:ArrayOfTipoactividad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contarBusquedaTipoactividad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Tipoactividad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contarBusquedaTipoactividadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="contarBusquedaTipoactividadResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarTipoactividad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Tipoactividad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarTipoactividadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eliminarTipoactividadResult" type="tns:TipoactividadResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="crearTipoactividadSoapIn">
+    <wsdl:part name="parameters" element="tns:crearTipoactividad" />
+  </wsdl:message>
+  <wsdl:message name="crearTipoactividadSoapOut">
+    <wsdl:part name="parameters" element="tns:crearTipoactividadResponse" />
+  </wsdl:message>
+  <wsdl:message name="crearTipoactividadAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="editarTipoactividadSoapIn">
+    <wsdl:part name="parameters" element="tns:editarTipoactividad" />
+  </wsdl:message>
+  <wsdl:message name="editarTipoactividadSoapOut">
+    <wsdl:part name="parameters" element="tns:editarTipoactividadResponse" />
+  </wsdl:message>
+  <wsdl:message name="editarTipoactividadAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroTipoactividadSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroTipoactividad" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroTipoactividadSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroTipoactividadResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroTipoactividadAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="buscarTipoactividadSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarTipoactividad" />
+  </wsdl:message>
+  <wsdl:message name="buscarTipoactividadSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarTipoactividadResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarTipoactividadAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionTipoactividadSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPaginacionTipoactividad" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionTipoactividadSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPaginacionTipoactividadResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionTipoactividadAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="listarTipoactividadSoapIn">
+    <wsdl:part name="parameters" element="tns:listarTipoactividad" />
+  </wsdl:message>
+  <wsdl:message name="listarTipoactividadSoapOut">
+    <wsdl:part name="parameters" element="tns:listarTipoactividadResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarTipoactividadAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionTipoactividadSoapIn">
+    <wsdl:part name="parameters" element="tns:listarPaginacionTipoactividad" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionTipoactividadSoapOut">
+    <wsdl:part name="parameters" element="tns:listarPaginacionTipoactividadResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionTipoactividadAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaTipoactividadSoapIn">
+    <wsdl:part name="parameters" element="tns:contarBusquedaTipoactividad" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaTipoactividadSoapOut">
+    <wsdl:part name="parameters" element="tns:contarBusquedaTipoactividadResponse" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaTipoactividadAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="eliminarTipoactividadSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarTipoactividad" />
+  </wsdl:message>
+  <wsdl:message name="eliminarTipoactividadSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarTipoactividadResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarTipoactividadAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:portType name="ServiciosTipoactividadSoap">
+    <wsdl:operation name="crearTipoactividad">
+      <wsdl:input message="tns:crearTipoactividadSoapIn" />
+      <wsdl:output message="tns:crearTipoactividadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="editarTipoactividad">
+      <wsdl:input message="tns:editarTipoactividadSoapIn" />
+      <wsdl:output message="tns:editarTipoactividadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroTipoactividad">
+      <wsdl:input message="tns:buscarPrimeroTipoactividadSoapIn" />
+      <wsdl:output message="tns:buscarPrimeroTipoactividadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarTipoactividad">
+      <wsdl:input message="tns:buscarTipoactividadSoapIn" />
+      <wsdl:output message="tns:buscarTipoactividadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionTipoactividad">
+      <wsdl:input message="tns:buscarPaginacionTipoactividadSoapIn" />
+      <wsdl:output message="tns:buscarPaginacionTipoactividadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarTipoactividad">
+      <wsdl:input message="tns:listarTipoactividadSoapIn" />
+      <wsdl:output message="tns:listarTipoactividadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionTipoactividad">
+      <wsdl:input message="tns:listarPaginacionTipoactividadSoapIn" />
+      <wsdl:output message="tns:listarPaginacionTipoactividadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaTipoactividad">
+      <wsdl:input message="tns:contarBusquedaTipoactividadSoapIn" />
+      <wsdl:output message="tns:contarBusquedaTipoactividadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarTipoactividad">
+      <wsdl:input message="tns:eliminarTipoactividadSoapIn" />
+      <wsdl:output message="tns:eliminarTipoactividadSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiciosTipoactividadSoap" type="tns:ServiciosTipoactividadSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearTipoactividad">
+      <soap:operation soapAction="http://tempuri.org/crearTipoactividad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:crearTipoactividadAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarTipoactividad">
+      <soap:operation soapAction="http://tempuri.org/editarTipoactividad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:editarTipoactividadAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroTipoactividad">
+      <soap:operation soapAction="http://tempuri.org/buscarPrimeroTipoactividad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:buscarPrimeroTipoactividadAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarTipoactividad">
+      <soap:operation soapAction="http://tempuri.org/buscarTipoactividad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:buscarTipoactividadAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionTipoactividad">
+      <soap:operation soapAction="http://tempuri.org/buscarPaginacionTipoactividad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:buscarPaginacionTipoactividadAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarTipoactividad">
+      <soap:operation soapAction="http://tempuri.org/listarTipoactividad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:listarTipoactividadAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionTipoactividad">
+      <soap:operation soapAction="http://tempuri.org/listarPaginacionTipoactividad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:listarPaginacionTipoactividadAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaTipoactividad">
+      <soap:operation soapAction="http://tempuri.org/contarBusquedaTipoactividad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:contarBusquedaTipoactividadAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarTipoactividad">
+      <soap:operation soapAction="http://tempuri.org/eliminarTipoactividad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:eliminarTipoactividadAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiciosTipoactividadSoap12" type="tns:ServiciosTipoactividadSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearTipoactividad">
+      <soap12:operation soapAction="http://tempuri.org/crearTipoactividad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:crearTipoactividadAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarTipoactividad">
+      <soap12:operation soapAction="http://tempuri.org/editarTipoactividad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:editarTipoactividadAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroTipoactividad">
+      <soap12:operation soapAction="http://tempuri.org/buscarPrimeroTipoactividad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:buscarPrimeroTipoactividadAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarTipoactividad">
+      <soap12:operation soapAction="http://tempuri.org/buscarTipoactividad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:buscarTipoactividadAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionTipoactividad">
+      <soap12:operation soapAction="http://tempuri.org/buscarPaginacionTipoactividad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:buscarPaginacionTipoactividadAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarTipoactividad">
+      <soap12:operation soapAction="http://tempuri.org/listarTipoactividad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:listarTipoactividadAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionTipoactividad">
+      <soap12:operation soapAction="http://tempuri.org/listarPaginacionTipoactividad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:listarPaginacionTipoactividadAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaTipoactividad">
+      <soap12:operation soapAction="http://tempuri.org/contarBusquedaTipoactividad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:contarBusquedaTipoactividadAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarTipoactividad">
+      <soap12:operation soapAction="http://tempuri.org/eliminarTipoactividad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:eliminarTipoactividadAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosTipoactividad">
+    <wsdl:port name="ServiciosTipoactividadSoap" binding="tns:ServiciosTipoactividadSoap">
+      <soap:address location="http://localhost:51390/Servicios/ServiciosTipoactividad.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiciosTipoactividadSoap12" binding="tns:ServiciosTipoactividadSoap12">
+      <soap12:address location="http://localhost:51390/Servicios/ServiciosTipoactividad.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

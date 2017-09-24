@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="crearTipoidentificacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Tipoidentificacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Tipoidentificacion">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_TIPO_IDENTIFICACION" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOM_TIPO_IDENTIFICACION" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="crearTipoidentificacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crearTipoidentificacionResult" type="tns:TipoidentificacionResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TipoidentificacionResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Response">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="objeto" type="tns:Tipoidentificacion" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Response" abstract="true">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="correcto" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="error" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Autenticacion" type="tns:Autenticacion" />
+      <s:complexType name="Autenticacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="editarTipoidentificacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Tipoidentificacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarTipoidentificacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="editarTipoidentificacionResult" type="tns:TipoidentificacionResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroTipoidentificacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Tipoidentificacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroTipoidentificacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPrimeroTipoidentificacionResult" type="tns:Tipoidentificacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarTipoidentificacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Tipoidentificacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarTipoidentificacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarTipoidentificacionResult" type="tns:ArrayOfTipoidentificacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTipoidentificacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Tipoidentificacion" nillable="true" type="tns:Tipoidentificacion" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="buscarPaginacionTipoidentificacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Tipoidentificacion" />
+            <s:element minOccurs="1" maxOccurs="1" name="pag" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numReg" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPaginacionTipoidentificacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPaginacionTipoidentificacionResult" type="tns:ArrayOfTipoidentificacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarTipoidentificacion">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarTipoidentificacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarTipoidentificacionResult" type="tns:ArrayOfTipoidentificacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarPaginacionTipoidentificacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pag" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numReg" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarPaginacionTipoidentificacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarPaginacionTipoidentificacionResult" type="tns:ArrayOfTipoidentificacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contarBusquedaTipoidentificacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Tipoidentificacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contarBusquedaTipoidentificacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="contarBusquedaTipoidentificacionResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarTipoidentificacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Tipoidentificacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarTipoidentificacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eliminarTipoidentificacionResult" type="tns:TipoidentificacionResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="crearTipoidentificacionSoapIn">
+    <wsdl:part name="parameters" element="tns:crearTipoidentificacion" />
+  </wsdl:message>
+  <wsdl:message name="crearTipoidentificacionSoapOut">
+    <wsdl:part name="parameters" element="tns:crearTipoidentificacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="crearTipoidentificacionAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="editarTipoidentificacionSoapIn">
+    <wsdl:part name="parameters" element="tns:editarTipoidentificacion" />
+  </wsdl:message>
+  <wsdl:message name="editarTipoidentificacionSoapOut">
+    <wsdl:part name="parameters" element="tns:editarTipoidentificacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="editarTipoidentificacionAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroTipoidentificacionSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroTipoidentificacion" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroTipoidentificacionSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroTipoidentificacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroTipoidentificacionAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="buscarTipoidentificacionSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarTipoidentificacion" />
+  </wsdl:message>
+  <wsdl:message name="buscarTipoidentificacionSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarTipoidentificacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarTipoidentificacionAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionTipoidentificacionSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPaginacionTipoidentificacion" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionTipoidentificacionSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPaginacionTipoidentificacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionTipoidentificacionAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="listarTipoidentificacionSoapIn">
+    <wsdl:part name="parameters" element="tns:listarTipoidentificacion" />
+  </wsdl:message>
+  <wsdl:message name="listarTipoidentificacionSoapOut">
+    <wsdl:part name="parameters" element="tns:listarTipoidentificacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarTipoidentificacionAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionTipoidentificacionSoapIn">
+    <wsdl:part name="parameters" element="tns:listarPaginacionTipoidentificacion" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionTipoidentificacionSoapOut">
+    <wsdl:part name="parameters" element="tns:listarPaginacionTipoidentificacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionTipoidentificacionAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaTipoidentificacionSoapIn">
+    <wsdl:part name="parameters" element="tns:contarBusquedaTipoidentificacion" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaTipoidentificacionSoapOut">
+    <wsdl:part name="parameters" element="tns:contarBusquedaTipoidentificacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaTipoidentificacionAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="eliminarTipoidentificacionSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarTipoidentificacion" />
+  </wsdl:message>
+  <wsdl:message name="eliminarTipoidentificacionSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarTipoidentificacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarTipoidentificacionAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:portType name="ServiciosTipoidentificacionSoap">
+    <wsdl:operation name="crearTipoidentificacion">
+      <wsdl:input message="tns:crearTipoidentificacionSoapIn" />
+      <wsdl:output message="tns:crearTipoidentificacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="editarTipoidentificacion">
+      <wsdl:input message="tns:editarTipoidentificacionSoapIn" />
+      <wsdl:output message="tns:editarTipoidentificacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroTipoidentificacion">
+      <wsdl:input message="tns:buscarPrimeroTipoidentificacionSoapIn" />
+      <wsdl:output message="tns:buscarPrimeroTipoidentificacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarTipoidentificacion">
+      <wsdl:input message="tns:buscarTipoidentificacionSoapIn" />
+      <wsdl:output message="tns:buscarTipoidentificacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionTipoidentificacion">
+      <wsdl:input message="tns:buscarPaginacionTipoidentificacionSoapIn" />
+      <wsdl:output message="tns:buscarPaginacionTipoidentificacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarTipoidentificacion">
+      <wsdl:input message="tns:listarTipoidentificacionSoapIn" />
+      <wsdl:output message="tns:listarTipoidentificacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionTipoidentificacion">
+      <wsdl:input message="tns:listarPaginacionTipoidentificacionSoapIn" />
+      <wsdl:output message="tns:listarPaginacionTipoidentificacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaTipoidentificacion">
+      <wsdl:input message="tns:contarBusquedaTipoidentificacionSoapIn" />
+      <wsdl:output message="tns:contarBusquedaTipoidentificacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarTipoidentificacion">
+      <wsdl:input message="tns:eliminarTipoidentificacionSoapIn" />
+      <wsdl:output message="tns:eliminarTipoidentificacionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiciosTipoidentificacionSoap" type="tns:ServiciosTipoidentificacionSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearTipoidentificacion">
+      <soap:operation soapAction="http://tempuri.org/crearTipoidentificacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:crearTipoidentificacionAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarTipoidentificacion">
+      <soap:operation soapAction="http://tempuri.org/editarTipoidentificacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:editarTipoidentificacionAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroTipoidentificacion">
+      <soap:operation soapAction="http://tempuri.org/buscarPrimeroTipoidentificacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:buscarPrimeroTipoidentificacionAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarTipoidentificacion">
+      <soap:operation soapAction="http://tempuri.org/buscarTipoidentificacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:buscarTipoidentificacionAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionTipoidentificacion">
+      <soap:operation soapAction="http://tempuri.org/buscarPaginacionTipoidentificacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:buscarPaginacionTipoidentificacionAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarTipoidentificacion">
+      <soap:operation soapAction="http://tempuri.org/listarTipoidentificacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:listarTipoidentificacionAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionTipoidentificacion">
+      <soap:operation soapAction="http://tempuri.org/listarPaginacionTipoidentificacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:listarPaginacionTipoidentificacionAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaTipoidentificacion">
+      <soap:operation soapAction="http://tempuri.org/contarBusquedaTipoidentificacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:contarBusquedaTipoidentificacionAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarTipoidentificacion">
+      <soap:operation soapAction="http://tempuri.org/eliminarTipoidentificacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:eliminarTipoidentificacionAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiciosTipoidentificacionSoap12" type="tns:ServiciosTipoidentificacionSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearTipoidentificacion">
+      <soap12:operation soapAction="http://tempuri.org/crearTipoidentificacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:crearTipoidentificacionAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarTipoidentificacion">
+      <soap12:operation soapAction="http://tempuri.org/editarTipoidentificacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:editarTipoidentificacionAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroTipoidentificacion">
+      <soap12:operation soapAction="http://tempuri.org/buscarPrimeroTipoidentificacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:buscarPrimeroTipoidentificacionAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarTipoidentificacion">
+      <soap12:operation soapAction="http://tempuri.org/buscarTipoidentificacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:buscarTipoidentificacionAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionTipoidentificacion">
+      <soap12:operation soapAction="http://tempuri.org/buscarPaginacionTipoidentificacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:buscarPaginacionTipoidentificacionAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarTipoidentificacion">
+      <soap12:operation soapAction="http://tempuri.org/listarTipoidentificacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:listarTipoidentificacionAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionTipoidentificacion">
+      <soap12:operation soapAction="http://tempuri.org/listarPaginacionTipoidentificacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:listarPaginacionTipoidentificacionAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaTipoidentificacion">
+      <soap12:operation soapAction="http://tempuri.org/contarBusquedaTipoidentificacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:contarBusquedaTipoidentificacionAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarTipoidentificacion">
+      <soap12:operation soapAction="http://tempuri.org/eliminarTipoidentificacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:eliminarTipoidentificacionAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosTipoidentificacion">
+    <wsdl:port name="ServiciosTipoidentificacionSoap" binding="tns:ServiciosTipoidentificacionSoap">
+      <soap:address location="http://localhost:51390/Servicios/ServiciosTipoidentificacion.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiciosTipoidentificacionSoap12" binding="tns:ServiciosTipoidentificacionSoap12">
+      <soap12:address location="http://localhost:51390/Servicios/ServiciosTipoidentificacion.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

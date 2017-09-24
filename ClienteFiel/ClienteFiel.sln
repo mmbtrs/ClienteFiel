@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClienteFiel", "ClienteFiel\ClienteFiel.csproj", "{0269CA80-8DE7-4ED7-BC75-F0224FBE0749}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiciosWebClienteFiel", "ServiciosWebClienteFiel\ServiciosWebClienteFiel.csproj", "{69FF8A5C-040C-4E83-B498-E570B0D44FE7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0269CA80-8DE7-4ED7-BC75-F0224FBE0749}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0269CA80-8DE7-4ED7-BC75-F0224FBE0749}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0269CA80-8DE7-4ED7-BC75-F0224FBE0749}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0269CA80-8DE7-4ED7-BC75-F0224FBE0749}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69FF8A5C-040C-4E83-B498-E570B0D44FE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69FF8A5C-040C-4E83-B498-E570B0D44FE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69FF8A5C-040C-4E83-B498-E570B0D44FE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69FF8A5C-040C-4E83-B498-E570B0D44FE7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

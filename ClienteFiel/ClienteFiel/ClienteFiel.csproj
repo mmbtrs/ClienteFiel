@@ -1,0 +1,874 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0269CA80-8DE7-4ED7-BC75-F0224FBE0749}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClienteFiel</RootNamespace>
+    <AssemblyName>ClienteFiel</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="INIREADER">
+      <HintPath>..\..\Documentos\Dll\INIREADER.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UtilidadesServiciosWeb, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Documentos\Dll\UtilidadesServiciosWeb.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClienteFiel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClienteFiel.Designer.cs">
+      <DependentUpon>ClienteFiel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modulos\accesorias\GestionDepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modulos\accesorias\GestionDepartamento.Designer.cs">
+      <DependentUpon>GestionDepartamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modulos\accesorias\GestionMunicipio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modulos\accesorias\GestionMunicipio.Designer.cs">
+      <DependentUpon>GestionMunicipio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modulos\accesorias\GestionTipoActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modulos\accesorias\GestionTipoActividad.Designer.cs">
+      <DependentUpon>GestionTipoActividad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modulos\accesorias\GestionTipoIdentificacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modulos\accesorias\GestionTipoIdentificacion.Designer.cs">
+      <DependentUpon>GestionTipoIdentificacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modulos\accesorias\GestionTipoProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modulos\accesorias\GestionTipoProducto.Designer.cs">
+      <DependentUpon>GestionTipoProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modulos\accesorias\GestionTipoRedSocial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modulos\accesorias\GestionTipoRedSocial.Designer.cs">
+      <DependentUpon>GestionTipoRedSocial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modulos\accesorias\setDepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modulos\accesorias\setDepartamento.Designer.cs">
+      <DependentUpon>setDepartamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modulos\accesorias\setMunicipio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modulos\accesorias\setMunicipio.Designer.cs">
+      <DependentUpon>setMunicipio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modulos\accesorias\SetTipoActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modulos\accesorias\SetTipoActividad.Designer.cs">
+      <DependentUpon>SetTipoActividad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modulos\accesorias\SetTipoIdentificacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modulos\accesorias\SetTipoIdentificacion.Designer.cs">
+      <DependentUpon>SetTipoIdentificacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modulos\accesorias\SetTipoProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modulos\accesorias\SetTipoProducto.Designer.cs">
+      <DependentUpon>SetTipoProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modulos\accesorias\SetTipoRedSocial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modulos\accesorias\SetTipoRedSocial.Designer.cs">
+      <DependentUpon>SetTipoRedSocial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modulos\empresa\GestionEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modulos\empresa\GestionEmpresa.Designer.cs">
+      <DependentUpon>GestionEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modulos\empresa\SetEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modulos\empresa\SetEmpresa.Designer.cs">
+      <DependentUpon>SetEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modulos\errores\GestionErrores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modulos\errores\GestionErrores.Designer.cs">
+      <DependentUpon>GestionErrores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modulos\errores\setErrores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modulos\errores\setErrores.Designer.cs">
+      <DependentUpon>setErrores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="utilidades\BaseAccesorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="utilidades\BaseAccesorias.Designer.cs">
+      <DependentUpon>BaseAccesorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="utilidades\ctrMunicipio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="utilidades\ctrMunicipio.Designer.cs">
+      <DependentUpon>ctrMunicipio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="utilidades\Mensajes.cs" />
+    <Compile Include="utilidades\utilidades.cs" />
+    <Compile Include="utilidades\VentanaImagen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="utilidades\VentanaImagen.Designer.cs">
+      <DependentUpon>VentanaImagen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WS_ServiciosDepartamento\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WS_ServiciosEmpresa\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WS_ServiciosError\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WS_ServiciosImagen\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WS_ServiciosMunicipio\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WS_ServiciosTipoactividad\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WS_ServiciosTipoidentificacion\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WS_ServiciosTipoproducto\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WS_ServiciosTiporedsocial\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WS_ServiciosViewempresa\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ClienteFiel.resx">
+      <DependentUpon>ClienteFiel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modulos\accesorias\GestionDepartamento.resx">
+      <DependentUpon>GestionDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modulos\accesorias\GestionMunicipio.resx">
+      <DependentUpon>GestionMunicipio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modulos\accesorias\GestionTipoActividad.resx">
+      <DependentUpon>GestionTipoActividad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modulos\accesorias\GestionTipoIdentificacion.resx">
+      <DependentUpon>GestionTipoIdentificacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modulos\accesorias\GestionTipoProducto.resx">
+      <DependentUpon>GestionTipoProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modulos\accesorias\GestionTipoRedSocial.resx">
+      <DependentUpon>GestionTipoRedSocial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modulos\accesorias\setDepartamento.resx">
+      <DependentUpon>setDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modulos\accesorias\setMunicipio.resx">
+      <DependentUpon>setMunicipio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modulos\accesorias\SetTipoActividad.resx">
+      <DependentUpon>SetTipoActividad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modulos\accesorias\SetTipoIdentificacion.resx">
+      <DependentUpon>SetTipoIdentificacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modulos\accesorias\SetTipoProducto.resx">
+      <DependentUpon>SetTipoProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modulos\accesorias\SetTipoRedSocial.resx">
+      <DependentUpon>SetTipoRedSocial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modulos\empresa\GestionEmpresa.resx">
+      <DependentUpon>GestionEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modulos\empresa\SetEmpresa.resx">
+      <DependentUpon>SetEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modulos\errores\GestionErrores.resx">
+      <DependentUpon>GestionErrores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modulos\errores\setErrores.resx">
+      <DependentUpon>setErrores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="utilidades\BaseAccesorias.resx">
+      <DependentUpon>BaseAccesorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="utilidades\ctrMunicipio.resx">
+      <DependentUpon>ctrMunicipio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="utilidades\VentanaImagen.resx">
+      <DependentUpon>VentanaImagen.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Web References\WS_ServiciosDepartamento\Departamento.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ServiciosDepartamento\DepartamentoResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ServiciosDepartamento\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS_ServiciosDepartamento\ServiciosDepartamento.wsdl" />
+    <None Include="Web References\WS_ServiciosEmpresa\Empresa.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ServiciosEmpresa\EmpresaResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ServiciosEmpresa\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS_ServiciosEmpresa\ServiciosEmpresa.wsdl" />
+    <None Include="Web References\WS_ServiciosError\Error.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ServiciosError\ErrorResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ServiciosError\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS_ServiciosError\ServiciosError.wsdl" />
+    <None Include="Web References\WS_ServiciosImagen\Imagen.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ServiciosImagen\ImagenResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ServiciosImagen\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS_ServiciosImagen\ServiciosImagen.wsdl" />
+    <None Include="Web References\WS_ServiciosMunicipio\Municipio.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ServiciosMunicipio\MunicipioResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ServiciosMunicipio\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS_ServiciosMunicipio\ServiciosMunicipio.wsdl" />
+    <None Include="Web References\WS_ServiciosTipoactividad\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS_ServiciosTipoactividad\ServiciosTipoactividad.wsdl" />
+    <None Include="Web References\WS_ServiciosTipoactividad\Tipoactividad.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ServiciosTipoactividad\TipoactividadResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ServiciosTipoidentificacion\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS_ServiciosTipoidentificacion\ServiciosTipoidentificacion.wsdl" />
+    <None Include="Web References\WS_ServiciosTipoidentificacion\Tipoidentificacion.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ServiciosTipoidentificacion\TipoidentificacionResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ServiciosTipoproducto\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS_ServiciosTipoproducto\ServiciosTipoproducto.wsdl" />
+    <None Include="Web References\WS_ServiciosTipoproducto\Tipoproducto.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ServiciosTipoproducto\TipoProductoResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ServiciosTiporedsocial\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS_ServiciosTiporedsocial\ServiciosTiporedsocial.wsdl" />
+    <None Include="Web References\WS_ServiciosTiporedsocial\Tiporedsocial.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ServiciosTiporedsocial\TiporedsocialResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ServiciosViewempresa\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS_ServiciosViewempresa\ServiciosViewempresa.wsdl" />
+    <None Include="Web References\WS_ServiciosViewempresa\Viewempresa.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cliente24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empresa24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\administracion24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FondoVentanas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FondoTitulos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redesSociales.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\insert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_azul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_azul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\XCerrar32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar_azul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FondoTitulos1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CruzVerde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\XRoja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Text Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\totalCommander.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscarImagen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sin imagen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\insertHoja24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\del24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flopy24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Red-Social.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SEGURIDAD-SOCIAL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red_social1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GestionAccesorias.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GetionUsuarios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\administracion40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adminAccesorias40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\administrador40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Empresa40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cliente40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Identificacion40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:51390/Servicios/ServiciosDepartamento.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_ServiciosDepartamento\</RelPath>
+      <UpdateFromURL>http://localhost:51390/Servicios/ServiciosDepartamento.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ClienteFiel_WS_ServiciosDepartamento_ServiciosDepartamento</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:51390/Servicios/ServiciosEmpresa.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_ServiciosEmpresa\</RelPath>
+      <UpdateFromURL>http://localhost:51390/Servicios/ServiciosEmpresa.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ClienteFiel_WS_ServiciosEmpresa_ServiciosEmpresa</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:51390/Servicios/ServiciosError.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_ServiciosError\</RelPath>
+      <UpdateFromURL>http://localhost:51390/Servicios/ServiciosError.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ClienteFiel_WS_ServiciosError_ServiciosError</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:51390/Servicios/ServiciosImagen.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_ServiciosImagen\</RelPath>
+      <UpdateFromURL>http://localhost:51390/Servicios/ServiciosImagen.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ClienteFiel_WS_ServiciosImagen_ServiciosImagen</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:51390/Servicios/ServiciosMunicipio.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_ServiciosMunicipio\</RelPath>
+      <UpdateFromURL>http://localhost:51390/Servicios/ServiciosMunicipio.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ClienteFiel_WS_ServiciosMunicipio_ServiciosMunicipio</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:51390/Servicios/ServiciosTipoactividad.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_ServiciosTipoactividad\</RelPath>
+      <UpdateFromURL>http://localhost:51390/Servicios/ServiciosTipoactividad.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ClienteFiel_WS_ServiciosTipoactividad_ServiciosTipoactividad</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:51390/Servicios/ServiciosTipoidentificacion.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_ServiciosTipoidentificacion\</RelPath>
+      <UpdateFromURL>http://localhost:51390/Servicios/ServiciosTipoidentificacion.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ClienteFiel_WS_ServiciosTipoidentificacion_ServiciosTipoidentificacion</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:51390/Servicios/ServiciosTipoproducto.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_ServiciosTipoproducto\</RelPath>
+      <UpdateFromURL>http://localhost:51390/Servicios/ServiciosTipoproducto.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ClienteFiel_WS_ServiciosTipoproducto_ServiciosTipoproducto</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:51390/Servicios/ServiciosTiporedsocial.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_ServiciosTiporedsocial\</RelPath>
+      <UpdateFromURL>http://localhost:51390/Servicios/ServiciosTiporedsocial.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ClienteFiel_WS_ServiciosTiporedsocial_ServiciosTiporedsocial</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:51390/Servicios/ServiciosViewempresa.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_ServiciosViewempresa\</RelPath>
+      <UpdateFromURL>http://localhost:51390/Servicios/ServiciosViewempresa.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ClienteFiel_WS_ServiciosViewempresa_ServiciosViewempresa</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\WS_ServiciosImagen\ServiciosImagen.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\WS_ServiciosTipoidentificacion\ServiciosTipoidentificacion.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\WS_ServiciosTiporedsocial\ServiciosTiporedsocial.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Auditoria40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Auditoria40x401.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actividad40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\producto40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ACCESORIOS-IDENTIFICACION1-1-300x300.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\name-tag-identification-card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tipo_actividad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\WS_ServiciosTipoactividad\ServiciosTipoactividad.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tipos de productos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\404.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error404.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\404conos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\WS_ServiciosError\ServiciosError.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\WS_ServiciosTipoproducto\ServiciosTipoproducto.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\colombia40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mapa_cauca40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\WS_ServiciosDepartamento\ServiciosDepartamento.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\WS_ServiciosMunicipio\ServiciosMunicipio.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mapa_politico_colombia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mapa_cauca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Empresa40x40_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descuentos40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\event40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\evento40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empresaa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\WS_ServiciosViewempresa\ServiciosViewempresa.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empresaa40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top40x40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estor-enrollable-opaco-regular-azul-oscuro-P-682412-4019591_4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondoPrincipal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondoPrincipal1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red_social2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondoTitulo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondoTitulo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondoBoton1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondoVentana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ServiciosWebClienteFiel\ServiciosWebClienteFiel.csproj">
+      <Project>{69FF8A5C-040C-4E83-B498-E570B0D44FE7}</Project>
+      <Name>ServiciosWebClienteFiel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\WS_ServiciosEmpresa\ServiciosEmpresa.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondoTitulo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondoGeneral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loadImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\removeImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loadImage1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\removeImage1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loadImage2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\removeImage2.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
