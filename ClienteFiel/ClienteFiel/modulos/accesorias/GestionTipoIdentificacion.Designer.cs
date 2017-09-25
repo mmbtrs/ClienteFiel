@@ -58,7 +58,6 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Location = new System.Drawing.Point(392, 101);
-            this.panel2.Size = new System.Drawing.Size(334, 53);
             // 
             // panel3
             // 
@@ -82,6 +81,7 @@
             // 
             // txtFiltro
             // 
+            this.txtFiltro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtFiltro.Location = new System.Drawing.Point(89, 126);
             this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             this.txtFiltro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFiltro_KeyPress);

@@ -8,7 +8,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using static ClienteFiel.utilidades.utilidades;
 
 namespace ClienteFiel.modulos.accesorias
 {
@@ -23,7 +22,7 @@ namespace ClienteFiel.modulos.accesorias
             inicializarServicios();
             cmbColumna.SelectedIndex = 0;
             getTipoActividad();
-            fijarSize(this);
+            Controles.utilidades.fijarSize(this);
         }
 
         private void inicializarServicios()
@@ -74,7 +73,7 @@ namespace ClienteFiel.modulos.accesorias
                         {
                         }
                     }
-                    utilidades.utilidades.setFormatGrid(grdTiposActividad);
+                    Controles.utilidades.setFormatGrid(grdTiposActividad);
                 }
             }
             catch (Exception exp)
@@ -134,7 +133,7 @@ namespace ClienteFiel.modulos.accesorias
 
         private void btnInsertar_Click(object sender, EventArgs e)
         {
-            SetTipoActividad setTipoActividad = new SetTipoActividad(tipoOperacion.Insertar, null);
+            SetTipoActividad setTipoActividad = new SetTipoActividad(Controles.utilidades.tipoOperacion.Insertar, null);
             setTipoActividad.ShowDialog(this);
             getTipoActividad();
         }
@@ -150,7 +149,7 @@ namespace ClienteFiel.modulos.accesorias
                     tmpTipo.ID_TIPO_ACTIVIDAD = long.Parse(grdTiposActividad.SelectedRows[0].Cells["ID_TIPO_ACTIVIDAD"].Value.ToString());
                     tmpTipo.NOM_TIPO_ACTIVIDAD = grdTiposActividad.SelectedRows[0].Cells["NOM_TIPO_ACTIVIDAD"].Value.ToString();
 
-                    SetTipoActividad setTipoactividad = new SetTipoActividad(tipoOperacion.Editar, tmpTipo);
+                    SetTipoActividad setTipoactividad = new SetTipoActividad(Controles.utilidades.tipoOperacion.Editar, tmpTipo);
                     setTipoactividad.ShowDialog(this);
                     getTipoActividad();
                 }

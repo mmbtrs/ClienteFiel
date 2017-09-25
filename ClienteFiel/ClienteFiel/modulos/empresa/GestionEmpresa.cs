@@ -67,7 +67,7 @@ namespace ClienteFiel.modulos.empresa
                         dr[10] = item.LONGITUD;
                         dr[11] = item.SUCURSAL;
                         dr[12] = item.NOM_MUNICIPIO;
-                        dr[13] = utilidades.utilidades.byteToImagen(item.IMAGEN);
+                        dr[13] = Controles.utilidades.byteToImagen(item.IMAGEN);
                         dtDatos.Rows.Add(dr);
                         i++;
                     }
@@ -86,7 +86,7 @@ namespace ClienteFiel.modulos.empresa
                         {
                         }
                     }
-                    utilidades.utilidades.setFormatGrid(grdDatos);
+                    Controles.utilidades.setFormatGrid(grdDatos);
                 }
             }
             catch (Exception exp)
@@ -110,7 +110,7 @@ namespace ClienteFiel.modulos.empresa
 
         private void btnInsertar_Click(object sender, EventArgs e)
         {
-            SetEmpresa setEmpresa = new SetEmpresa(utilidades.utilidades.tipoOperacion.Insertar, null);
+            SetEmpresa setEmpresa = new SetEmpresa(Controles.utilidades.tipoOperacion.Insertar, null);
             setEmpresa.ShowDialog(this);
         }
     }

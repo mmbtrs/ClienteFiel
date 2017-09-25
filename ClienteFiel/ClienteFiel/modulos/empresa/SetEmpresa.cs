@@ -11,13 +11,12 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using UtilidadesServiciosWeb;
-using static ClienteFiel.utilidades.utilidades;
 
 namespace ClienteFiel.modulos.empresa
 {
     public partial class SetEmpresa : Form
     {
-        tipoOperacion operacion;
+        Controles.utilidades.tipoOperacion operacion;
         WS_ServiciosEmpresa.Empresa empresa;
         WS_ServiciosEmpresa.ServiciosEmpresa serviciosEmpresa;
         WS_ServiciosDepartamento.ServiciosDepartamento serviciosDepartamento;
@@ -27,7 +26,7 @@ namespace ClienteFiel.modulos.empresa
 
         DataTable dtDatos;
 
-        public SetEmpresa(tipoOperacion tmpOperacion, WS_ServiciosEmpresa.Empresa tmpEmpresa)
+        public SetEmpresa(Controles.utilidades.tipoOperacion tmpOperacion, WS_ServiciosEmpresa.Empresa tmpEmpresa)
         {
             InitializeComponent();
             inicializarServicios();
@@ -37,7 +36,7 @@ namespace ClienteFiel.modulos.empresa
             getDepartamentos();
             getMunicipios();
             getTiposRedesSociales();
-            fijarSize(this);
+            Controles.utilidades.fijarSize(this);
         }
 
         private void inicializarServicios()
@@ -65,7 +64,7 @@ namespace ClienteFiel.modulos.empresa
         {
             try
             {
-                if (operacion == tipoOperacion.Insertar)
+                if (operacion == Controles.utilidades.tipoOperacion.Insertar)
                 {
                     this.Text = "Crear Nueva Empresa";
                     lblTituloVentana.Text = "Nueva Empresa";
@@ -164,29 +163,10 @@ namespace ClienteFiel.modulos.empresa
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cargarLogo();
-        }
-
-        private void cargarLogo()
-        {
-            try
-            {
-                if (openLogo.ShowDialog() == DialogResult.OK)
-                {
-                    picLogo.ImageLocation = openLogo.FileName;
-                }
-                else
-                    picLogo.Image = null;
-            }
-            catch (Exception exp)
-            {
-                utilidades.Mensajes.mensajeError(exp.Message);
-            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            picLogo.Image = null;
         }
 
         private void radOtra_CheckedChanged(object sender, EventArgs e)
@@ -202,58 +182,58 @@ namespace ClienteFiel.modulos.empresa
 
         private void txtNit_KeyPress(object sender, KeyPressEventArgs e)
         {
-            utilidades.utilidades.esNumero(e);
-            utilidades.utilidades.lanzarTapConEnter(e);
+            Controles.utilidades.esNumero(e);
+            Controles.utilidades.lanzarTapConEnter(e);
         }
 
         private void txtRazonSocial_KeyPress(object sender, KeyPressEventArgs e)
         {
-            utilidades.utilidades.lanzarTapConEnter(e);
+            Controles.utilidades.lanzarTapConEnter(e);
         }
 
         private void cmbDpto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            utilidades.utilidades.lanzarTapConEnter(e);
+            Controles.utilidades.lanzarTapConEnter(e);
         }
 
         private void cmbMunicipio_KeyPress(object sender, KeyPressEventArgs e)
         {
-            utilidades.utilidades.lanzarTapConEnter(e);
+            Controles.utilidades.lanzarTapConEnter(e);
         }
 
         private void txtDireccion_KeyPress(object sender, KeyPressEventArgs e)
         {
-            utilidades.utilidades.lanzarTapConEnter(e);
+            Controles.utilidades.lanzarTapConEnter(e);
         }
 
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
-            utilidades.utilidades.lanzarTapConEnter(e);
+            Controles.utilidades.lanzarTapConEnter(e);
         }
 
         private void txtSlogan_KeyPress(object sender, KeyPressEventArgs e)
         {
-            utilidades.utilidades.lanzarTapConEnter(e);
+            Controles.utilidades.lanzarTapConEnter(e);
         }
 
         private void radPrincipal_KeyPress(object sender, KeyPressEventArgs e)
         {
-            utilidades.utilidades.lanzarTapConEnter(e);
+            Controles.utilidades.lanzarTapConEnter(e);
         }
 
         private void radOtra_KeyPress(object sender, KeyPressEventArgs e)
         {
-            utilidades.utilidades.lanzarTapConEnter(e);
+            Controles.utilidades.lanzarTapConEnter(e);
         }
 
         private void txtSucursal_KeyPress(object sender, KeyPressEventArgs e)
         {
-            utilidades.utilidades.lanzarTapConEnter(e);
+            Controles.utilidades.lanzarTapConEnter(e);
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (operacion == tipoOperacion.Insertar)
+            if (operacion == Controles.utilidades.tipoOperacion.Insertar)
             {
                 guardar();
             }
@@ -267,7 +247,7 @@ namespace ClienteFiel.modulos.empresa
         {
             try
             {
-                if (picLogo.Image != null)
+                if (ctrLogo.getImage() != null)
                 {
                     ImagenResponse responseImagen = guardarImagen();
                     if (responseImagen.correcto)
@@ -321,7 +301,7 @@ namespace ClienteFiel.modulos.empresa
             try
             {
                 Imagen objImagen = new Imagen();
-                objImagen.IMAGEN = utilidades.utilidades.ImageToByte(picLogo.Image);
+                objImagen.IMAGEN = Controles.utilidades.ImageToByte(ctrLogo.getImage());
                 objResponse = serviciosImagen.crearImagen(objImagen);
                 return objResponse;
             }
@@ -365,7 +345,7 @@ namespace ClienteFiel.modulos.empresa
                         if (tmpImagen != null && tmpImagen.ID_IMAGEN > 0)
                         {
                             dr[3] = tmpImagen.ID_IMAGEN.ToString();
-                            dr[4] = utilidades.utilidades.byteToImagen(tmpImagen.IMAGEN);
+                            dr[4] = Controles.utilidades.byteToImagen(tmpImagen.IMAGEN);
                         }
                         else
                         {
@@ -387,7 +367,7 @@ namespace ClienteFiel.modulos.empresa
                             grdTiposRedesSociales.Rows.Add(new object[] { dtDatos.Rows[j][0], dtDatos.Rows[j][1], dtDatos.Rows[j][2], dtDatos.Rows[j][3], null });
                         }
                     }
-                    utilidades.utilidades.setFormatGrid(grdTiposRedesSociales);
+                    Controles.utilidades.setFormatGrid(grdTiposRedesSociales);
                 }
             }
             catch (Exception exp)

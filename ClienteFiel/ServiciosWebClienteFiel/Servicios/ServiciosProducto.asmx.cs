@@ -8,7 +8,7 @@ using System.Web.Services.Protocols;
 
 using ServiciosWebClienteFiel.objetos;
 using ServiciosWebClienteFiel.gestion;
-
+using ServiciosWebClienteFiel.ObjectsResponse;
 
 namespace ServiciosWebClienteFiel.Servicios  {
 
@@ -42,7 +42,7 @@ public class ServiciosProducto  : System.Web.Services.WebService {
 	[WebMethod]
 	[SoapHeader("autenticacion")]
 	[XmlInclude(typeof(Producto))]
-	public Producto crearProducto(Producto obj) {
+	public ProductoResponse crearProducto(Producto obj) {
 	       if (autenticacion != null && autenticacion.esValido()) 
 				return gestionProducto.crearProducto(obj); 
            return null;
@@ -50,10 +50,10 @@ public class ServiciosProducto  : System.Web.Services.WebService {
 	
 	[WebMethod]
 	[SoapHeader("autenticacion")]
-	public bool editarProducto(Producto obj) {
+	public ProductoResponse editarProducto(Producto obj) {
 			if (autenticacion != null && autenticacion.esValido()) 
 				return gestionProducto.editarProducto(obj);
-            return false; 
+            return null; 
 	}
 	
 	[WebMethod]
@@ -111,10 +111,10 @@ public class ServiciosProducto  : System.Web.Services.WebService {
 	
 	[WebMethod]
 	[SoapHeader("autenticacion")]
-	public bool eliminarProducto(Producto obj) {
+	public ProductoResponse eliminarProducto(Producto obj) {
 		if (autenticacion != null && autenticacion.esValido()) 
 			return gestionProducto.eliminarProducto(obj);
-        return false;
+        return null;
 	}
 }
 

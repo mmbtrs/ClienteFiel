@@ -9,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using UtilidadesServiciosWeb;
-using static ClienteFiel.utilidades.utilidades;
 
 namespace ClienteFiel.modulos.errores
 {
@@ -59,7 +58,7 @@ namespace ClienteFiel.modulos.errores
                         grdErrores.Rows.Add(new object[] {dt.Rows[j][0], dt.Rows[j][1], dt.Rows[j][2], dt.Rows[j][3], dt.Rows[j][4] });
                     }
 
-                    utilidades.utilidades.setFormatGrid(grdErrores);
+                    Controles.utilidades.setFormatGrid(grdErrores);
                 }
             }
             catch (Exception exp)
@@ -158,7 +157,7 @@ namespace ClienteFiel.modulos.errores
                     tmpError.MENSAJE_PARA_USUARIO = grdErrores.SelectedRows[0].Cells["MENSAJE"].Value.ToString();
                     tmpError.POSIBLE_SOLUCION = grdErrores.SelectedRows[0].Cells["SOLUCION"].Value.ToString();
 
-                    setErrores setE = new setErrores(tipoOperacion.Editar, tmpError);
+                    setErrores setE = new setErrores(Controles.utilidades.tipoOperacion.Editar, tmpError);
                     setE.ShowDialog(this);
                     getErrores();
                 }

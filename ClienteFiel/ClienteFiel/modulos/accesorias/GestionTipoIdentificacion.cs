@@ -9,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using UtilidadesServiciosWeb;
-using static ClienteFiel.utilidades.utilidades;
 
 namespace ClienteFiel.modulos.accesorias
 {
@@ -24,7 +23,7 @@ namespace ClienteFiel.modulos.accesorias
             inicializarServicios();
             cmbColumna.SelectedIndex = 0;
             getTipoIdentificacion();
-            fijarSize(this);
+            Controles.utilidades.fijarSize(this);
         }
 
         private void getTipoIdentificacion()
@@ -62,7 +61,7 @@ namespace ClienteFiel.modulos.accesorias
                         {
                         }
                     }
-                    utilidades.utilidades.setFormatGrid(grdTipoIdentificacion);
+                    Controles.utilidades.setFormatGrid(grdTipoIdentificacion);
                 }
             }
             catch (Exception exp)
@@ -135,7 +134,7 @@ namespace ClienteFiel.modulos.accesorias
 
         private void btnInsertar_Click(object sender, EventArgs e)
         {
-            SetTipoIdentificacion setTipoIdentificacion = new SetTipoIdentificacion(tipoOperacion.Insertar, null);
+            SetTipoIdentificacion setTipoIdentificacion = new SetTipoIdentificacion(Controles.utilidades.tipoOperacion.Insertar, null);
             setTipoIdentificacion.ShowDialog(this);
             getTipoIdentificacion();
         }
@@ -151,7 +150,7 @@ namespace ClienteFiel.modulos.accesorias
                     tmpTipo.ID_TIPO_IDENTIFICACION = long.Parse(grdTipoIdentificacion.SelectedRows[0].Cells["ID_TIPO_IDENTIFICACION"].Value.ToString());
                     tmpTipo.NOM_TIPO_IDENTIFICACION = grdTipoIdentificacion.SelectedRows[0].Cells["NOM_TIPO_IDENTIFICACION"].Value.ToString();
 
-                    SetTipoIdentificacion setTipoIdentificacion = new SetTipoIdentificacion(tipoOperacion.Editar, tmpTipo);
+                    SetTipoIdentificacion setTipoIdentificacion = new SetTipoIdentificacion(Controles.utilidades.tipoOperacion.Editar, tmpTipo);
                     setTipoIdentificacion.ShowDialog(this);
                     getTipoIdentificacion();
                 }

@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using UtilidadesServiciosWeb;
-using static ClienteFiel.utilidades.utilidades;
 
 namespace ClienteFiel.modulos.errores
 {
@@ -16,10 +15,10 @@ namespace ClienteFiel.modulos.errores
     {
         ServiciosError serviciosError;
 
-        tipoOperacion operacion;
+        Controles.utilidades.tipoOperacion operacion;
         Error error;
 
-        public setErrores(tipoOperacion tmpTipoOperacion, Error tmpError)
+        public setErrores(Controles.utilidades.tipoOperacion tmpTipoOperacion, Error tmpError)
         {
             InitializeComponent();
             inicializarServicios();
@@ -33,7 +32,7 @@ namespace ClienteFiel.modulos.errores
         {
             try
             {
-                if (operacion == tipoOperacion.Insertar)
+                if (operacion == Controles.utilidades.tipoOperacion.Insertar)
                 {
                     this.Text = "Crear Nuevo Tipo de Error";
                     lblTituloVentana.Text = "Nuevo Tipo de Error";
@@ -134,7 +133,7 @@ namespace ClienteFiel.modulos.errores
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (operacion == tipoOperacion.Insertar)
+            if (operacion == Controles.utilidades.tipoOperacion.Insertar)
                 guardar();
             else
                 editar();

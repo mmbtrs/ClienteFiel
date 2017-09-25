@@ -8,25 +8,24 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using UtilidadesServiciosWeb;
-using static ClienteFiel.utilidades.utilidades;
 
 namespace ClienteFiel.modulos.accesorias
 {
     public partial class SetTipoIdentificacion : Form
     {
         ServiciosTipoidentificacion serviciosTipoidentificacion;
-        tipoOperacion operacion;
+        Controles.utilidades.tipoOperacion operacion;
 
         Tipoidentificacion tipoidentificacion;
 
-        public SetTipoIdentificacion(tipoOperacion tmpOperacion, Tipoidentificacion tmpTipoIdent)
+        public SetTipoIdentificacion(Controles.utilidades.tipoOperacion tmpOperacion, Tipoidentificacion tmpTipoIdent)
         {
             InitializeComponent();
             inicializarServicios();
             operacion = tmpOperacion;
             tipoidentificacion = tmpTipoIdent;
             configuracionInicial();
-            fijarSize(this);
+            Controles.utilidades.fijarSize(this);
         }
 
         private void inicializarServicios()
@@ -46,7 +45,7 @@ namespace ClienteFiel.modulos.accesorias
         {
             try
             {
-                if (operacion == tipoOperacion.Insertar)
+                if (operacion == Controles.utilidades.tipoOperacion.Insertar)
                 {
                     this.Text = "Crear Nuevo Tipo de Identificación";
                     lblTituloVentana.Text = "Nuevo Tipo de Identificación";
@@ -97,7 +96,7 @@ namespace ClienteFiel.modulos.accesorias
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (operacion == tipoOperacion.Insertar)
+            if (operacion == Controles.utilidades.tipoOperacion.Insertar)
                 guardar();
             else
                 editar();

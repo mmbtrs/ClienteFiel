@@ -9,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using UtilidadesServiciosWeb;
-using static ClienteFiel.utilidades.utilidades;
 
 namespace ClienteFiel.modulos.accesorias
 {
@@ -24,7 +23,7 @@ namespace ClienteFiel.modulos.accesorias
             inicializarServicios();
             cmbColumna.SelectedIndex = 0;
             getDepartamentos();
-            fijarSize(this);
+            Controles.utilidades.fijarSize(this);
         }
 
         private void getDepartamentos()
@@ -62,7 +61,7 @@ namespace ClienteFiel.modulos.accesorias
                         {
                         }
                     }
-                    utilidades.utilidades.setFormatGrid(grdDepartamentos);
+                    Controles.utilidades.setFormatGrid(grdDepartamentos);
                 }
             }
             catch (Exception exp)
@@ -145,7 +144,7 @@ namespace ClienteFiel.modulos.accesorias
 
         private void btnInsertar_Click(object sender, EventArgs e)
         {
-            setDepartamento setDpto = new setDepartamento(tipoOperacion.Insertar, null);
+            setDepartamento setDpto = new setDepartamento(Controles.utilidades.tipoOperacion.Insertar, null);
             setDpto.ShowDialog(this);
             getDepartamentos();
         }
@@ -161,7 +160,7 @@ namespace ClienteFiel.modulos.accesorias
                     tmpDpto.ID_DEPARTAMENTO = long.Parse(grdDepartamentos.SelectedRows[0].Cells["ID_DEPARTAMENTO"].Value.ToString());
                     tmpDpto.NOM_DEPARTAMENTO = grdDepartamentos.SelectedRows[0].Cells["NOM_DEPARTAMENTO"].Value.ToString();
 
-                    setDepartamento setDpto = new setDepartamento(tipoOperacion.Editar, tmpDpto);
+                    setDepartamento setDpto = new setDepartamento(Controles.utilidades.tipoOperacion.Editar, tmpDpto);
                     setDpto.ShowDialog(this);
                     getDepartamentos();
                 }

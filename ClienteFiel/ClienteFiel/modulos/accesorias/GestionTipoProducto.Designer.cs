@@ -55,7 +55,7 @@
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(383, 95);
+            this.panel2.Location = new System.Drawing.Point(377, 95);
             this.panel2.Size = new System.Drawing.Size(333, 53);
             // 
             // panel3
@@ -80,7 +80,9 @@
             // 
             // txtFiltro
             // 
+            this.txtFiltro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtFiltro.Location = new System.Drawing.Point(89, 125);
+            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // picBuscar
             // 

@@ -10,7 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using UtilidadesServiciosWeb;
-using static ClienteFiel.utilidades.utilidades;
 
 namespace ClienteFiel.modulos.accesorias
 {
@@ -27,7 +26,7 @@ namespace ClienteFiel.modulos.accesorias
             inicializarServicios();
             cmbColumna.SelectedIndex = 0;
             getTiposRedesSociales();
-            utilidades.utilidades.fijarSize(this);
+            Controles.utilidades.fijarSize(this);
         }
 
         private void getTiposRedesSociales()
@@ -60,7 +59,7 @@ namespace ClienteFiel.modulos.accesorias
                         if (tmpImagen != null && tmpImagen.ID_IMAGEN > 0)
                         {
                             dr[3] = tmpImagen.ID_IMAGEN.ToString();
-                            dr[4] = utilidades.utilidades.byteToImagen(tmpImagen.IMAGEN);
+                            dr[4] = Controles.utilidades.byteToImagen(tmpImagen.IMAGEN);
                         }
                         else
                         {
@@ -82,7 +81,7 @@ namespace ClienteFiel.modulos.accesorias
                             grdTiposRedesSociales.Rows.Add(new object[] { dtDatos.Rows[j][0], dtDatos.Rows[j][1], dtDatos.Rows[j][2], dtDatos.Rows[j][3], null });
                         }
                     }
-                    utilidades.utilidades.setFormatGrid(grdTiposRedesSociales);
+                    Controles.utilidades.setFormatGrid(grdTiposRedesSociales);
                 } 
             }
             catch (Exception exp)
@@ -224,7 +223,7 @@ namespace ClienteFiel.modulos.accesorias
 
         private void btnInsertar_Click_1(object sender, EventArgs e)
         {
-            SetTipoRedSocial setTipoRedSocial = new SetTipoRedSocial(tipoOperacion.Insertar, null, null);
+            SetTipoRedSocial setTipoRedSocial = new SetTipoRedSocial(Controles.utilidades.tipoOperacion.Insertar, null, null);
             setTipoRedSocial.ShowDialog(this);
             getTiposRedesSociales();
         }
@@ -247,7 +246,7 @@ namespace ClienteFiel.modulos.accesorias
                         tmpTipo.ID_IMAGEN = tmpLong;
                         tmpImagen.ID_IMAGEN = tmpTipo.ID_IMAGEN;
                         if (tmpLong > 0)
-                            tmpImagen.IMAGEN = utilidades.utilidades.ImageToByte((Image)grdTiposRedesSociales.SelectedRows[0].Cells["IMAGEN"].Value);
+                            tmpImagen.IMAGEN = Controles.utilidades.ImageToByte((Image)grdTiposRedesSociales.SelectedRows[0].Cells["IMAGEN"].Value);
                         else
                             tmpImagen.IMAGEN = null;
                     }
@@ -257,7 +256,7 @@ namespace ClienteFiel.modulos.accesorias
                         tmpImagen.ID_IMAGEN = 0;
                         tmpImagen.IMAGEN = null;
                     }
-                    SetTipoRedSocial setTipoRedSocial = new SetTipoRedSocial(tipoOperacion.Editar, tmpTipo, tmpImagen);
+                    SetTipoRedSocial setTipoRedSocial = new SetTipoRedSocial(Controles.utilidades.tipoOperacion.Editar, tmpTipo, tmpImagen);
                     setTipoRedSocial.ShowDialog(this);
                     getTiposRedesSociales();
                 }

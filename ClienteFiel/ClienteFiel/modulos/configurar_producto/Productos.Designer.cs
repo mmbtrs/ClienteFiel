@@ -28,31 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctrImagen1 = new Controles.ctrImagen();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogoVentana)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBuscar)).BeginInit();
             this.SuspendLayout();
             // 
-            // ctrImagen1
+            // panel1
             // 
-            this.ctrImagen1.BackColor = System.Drawing.Color.Transparent;
-            this.ctrImagen1.Location = new System.Drawing.Point(223, 87);
-            this.ctrImagen1.Name = "ctrImagen1";
-            this.ctrImagen1.Size = new System.Drawing.Size(238, 140);
-            this.ctrImagen1.TabIndex = 0;
+            this.panel1.Size = new System.Drawing.Size(942, 393);
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(780, 112);
+            // 
+            // panel3
+            // 
+            this.panel3.Size = new System.Drawing.Size(940, 104);
+            // 
+            // btnInsertar
+            // 
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
             // Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(676, 311);
-            this.Controls.Add(this.ctrImagen1);
+            this.BackgroundImage = global::ClienteFiel.Properties.Resources.fondoVentana;
+            this.ClientSize = new System.Drawing.Size(942, 393);
             this.Name = "Productos";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Productos";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogoVentana)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBuscar)).EndInit();
             this.ResumeLayout(false);
 
         }
-
-        private Controles.ctrImagen ctrImagen1;
 
         //private ClienteFiel.modulos.controles_usuario.ctrImagen ctrImagen1;
 

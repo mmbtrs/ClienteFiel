@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using UtilidadesServiciosWeb;
-using static ClienteFiel.utilidades.utilidades;
 
 namespace ClienteFiel.modulos.accesorias
 {
@@ -16,24 +15,24 @@ namespace ClienteFiel.modulos.accesorias
     public partial class setDepartamento : Form
     {
         ServiciosDepartamento serviciosDepartamento;
-        tipoOperacion operacion;
+        Controles.utilidades.tipoOperacion operacion;
         Departamento departamento;
 
-        public setDepartamento(tipoOperacion tmpOperacion, Departamento tmpDpto)
+        public setDepartamento(Controles.utilidades.tipoOperacion tmpOperacion, Departamento tmpDpto)
         {
             InitializeComponent();
             inicializarServicios();
             operacion = tmpOperacion;
             departamento = tmpDpto;
             configuracionInicial();
-            fijarSize(this);
+            Controles.utilidades.fijarSize(this);
         }
 
         private void configuracionInicial()
         {
             try
             {
-                if (operacion == tipoOperacion.Insertar)
+                if (operacion == Controles.utilidades.tipoOperacion.Insertar)
                 {
                     this.Text = "Crear Nuevo Departamento";
                     lblTituloVentana.Text = "Nuevo Departamento";
@@ -125,7 +124,7 @@ namespace ClienteFiel.modulos.accesorias
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (operacion == tipoOperacion.Insertar)
+            if (operacion == Controles.utilidades.tipoOperacion.Insertar)
                 guardar();
             else
                 editar();

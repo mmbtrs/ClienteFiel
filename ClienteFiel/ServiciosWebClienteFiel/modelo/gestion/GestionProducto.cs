@@ -9,8 +9,7 @@ using AccesoDatos;
 
 using ServiciosWebClienteFiel.dao;
 using ServiciosWebClienteFiel.objetos;
-
-
+using ServiciosWebClienteFiel.ObjectsResponse;
 
 namespace ServiciosWebClienteFiel.gestion {
 
@@ -33,17 +32,18 @@ public partial class GestionProducto {
      * @param Producto obj
      * @return Retorna el mismo objeto pero con la llave primaria configurada
      */
-	public Producto crearProducto(Producto obj) {
+	public ProductoResponse crearProducto(Producto obj) {
 		List<Producto> lista = null;
         Producto obj_new = new Producto();
+            ProductoResponse objResponse = new ProductoResponse();
 		try {
             ProductoDao dao = new ProductoDao();
             conn = conexion.conectar();
-            int id = Funciones.obtenerId(conn, "PRODUCTO");
-            obj.ID_PRODUCTO = id;
             dao.create(conn, obj);
             //verificar existencia
-            obj_new.ID_PRODUCTO = obj.ID_PRODUCTO;
+            obj_new.NOM_PRODUCTO = obj.NOM_PRODUCTO;
+                obj_new.ID_EMPRESA = obj.ID_EMPRESA;
+                obj_new.ID_TIPO_PRODUCTO = obj.ID_TIPO_PRODUCTO;
             lista = dao.searchMatching(conn, obj_new);
             if (lista != null && lista.Count > 0) {
                 obj_new = (Producto)lista[0];
@@ -51,14 +51,20 @@ public partial class GestionProducto {
             else {
                 obj_new.ID_PRODUCTO = -1;
             }
+                objResponse.correcto = true;
+                objResponse.error = "";
+                objResponse.objeto = obj_new;
         } catch (Exception e) {
             
             obj_new.ID_PRODUCTO = -1;
-        } finally {
+                objResponse.correcto = false;
+                objResponse.error = e.Message;
+                objResponse.objeto = obj_new;
+            } finally {
             if(conn!=null && conn.State == System.Data.ConnectionState.Open)
 			conn.Close();
         }
-        return obj_new;
+        return objResponse;
     }
 	
 	/**
@@ -66,17 +72,21 @@ public partial class GestionProducto {
      * @param Producto obj
      * @return boolean indicando si se realizo o no la actualizacion
      */
-    public bool editarProducto(Producto obj) {
-        bool resultado;
-        resultado = false;
+    public ProductoResponse editarProducto(Producto obj) {
+        ProductoResponse resultado = new ProductoResponse();
+        resultado.correcto = false;
         try {
 			ProductoDao dao = new ProductoDao();
             conn = conexion.conectar();
             dao.save(conn, obj);
-            resultado = true;
+            resultado.correcto = true;
+                resultado.error = "";
+                resultado.objeto = obj;
         } catch (Exception e) {
             
-            resultado = false;
+            resultado.correcto = false;
+                resultado.error = e.Message;
+                resultado.objeto = obj;
         } finally {
             if(conn!=null && conn.State == System.Data.ConnectionState.Open)
 			conn.Close();
@@ -243,18 +253,22 @@ public partial class GestionProducto {
      * @param Producto obj
      * @return Retorna un boolean indicando si se realizo o no la operacion
      */
-    public bool eliminarProducto(Producto obj) {
-        bool resultado;
-        resultado = false;
+    public ProductoResponse eliminarProducto(Producto obj) {
+        ProductoResponse resultado = new ProductoResponse();
+        resultado.correcto = false;
         try {
 			ProductoDao dao = new ProductoDao();
             conn = conexion.conectar();
             dao.delete(conn, obj);
-            resultado = true;
+            resultado.correcto = true;
+                resultado.error = "";
+                resultado.objeto = obj;
         } catch (Exception e) {
-            
-            resultado = false;
-        } finally {
+
+                resultado.correcto = false;
+                resultado.error = e.Message;
+                resultado.objeto = obj;
+            } finally {
             if(conn!=null && conn.State == System.Data.ConnectionState.Open)
 			conn.Close();
         }

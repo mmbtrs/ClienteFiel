@@ -33,20 +33,36 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="UtilidadesServiciosWeb">
+      <HintPath>..\..\Documentos\Dll\UtilidadesServiciosWeb.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ctrEmpresas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrEmpresas.Designer.cs">
+      <DependentUpon>ctrEmpresas.cs</DependentUpon>
+    </Compile>
     <Compile Include="ctrImagen.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ctrImagen.Designer.cs">
       <DependentUpon>ctrImagen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrTipoProducto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrTipoProducto.Designer.cs">
+      <DependentUpon>ctrTipoProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -54,10 +70,32 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="utilidades.cs" />
+    <Compile Include="Web References\WS_ServiciosTipoproducto\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WS_ServiciosViewempresa\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ctrEmpresas.resx">
+      <DependentUpon>ctrEmpresas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ctrImagen.resx">
       <DependentUpon>ctrImagen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrTipoProducto.resx">
+      <DependentUpon>ctrTipoProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -65,7 +103,31 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Resources\loadImage.png" />
+    <None Include="Web References\WS_ServiciosTipoproducto\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS_ServiciosTipoproducto\ServiciosTipoproducto.wsdl" />
+    <None Include="Web References\WS_ServiciosTipoproducto\Tipoproducto.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ServiciosTipoproducto\TipoProductoResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ServiciosViewempresa\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS_ServiciosViewempresa\ServiciosViewempresa.wsdl" />
+    <None Include="Web References\WS_ServiciosViewempresa\Viewempresa.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\loadImage32x32.png" />
@@ -84,6 +146,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\loadImage26x26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:51390/Servicios/ServiciosTipoproducto.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_ServiciosTipoproducto\</RelPath>
+      <UpdateFromURL>http://localhost:51390/Servicios/ServiciosTipoproducto.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Controles_WS_ServiciosTipoproducto_ServiciosTipoproducto</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:51390/Servicios/ServiciosViewempresa.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_ServiciosViewempresa\</RelPath>
+      <UpdateFromURL>http://localhost:51390/Servicios/ServiciosViewempresa.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Controles_WS_ServiciosViewempresa_ServiciosViewempresa</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\WS_ServiciosViewempresa\ServiciosViewempresa.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\WS_ServiciosTipoproducto\ServiciosTipoproducto.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

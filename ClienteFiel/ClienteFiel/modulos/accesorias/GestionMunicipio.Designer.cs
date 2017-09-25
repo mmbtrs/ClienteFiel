@@ -255,6 +255,7 @@
             // 
             // txtFiltroMunicipio
             // 
+            this.txtFiltroMunicipio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtFiltroMunicipio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFiltroMunicipio.Location = new System.Drawing.Point(85, 66);
             this.txtFiltroMunicipio.Name = "txtFiltroMunicipio";
@@ -436,6 +437,7 @@
             // 
             // txtFiltroDpto
             // 
+            this.txtFiltroDpto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtFiltroDpto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFiltroDpto.Location = new System.Drawing.Point(85, 66);
             this.txtFiltroDpto.Name = "txtFiltroDpto";

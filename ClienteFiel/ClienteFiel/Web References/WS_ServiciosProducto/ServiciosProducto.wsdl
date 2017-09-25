@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="crearProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Producto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Producto">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_PRODUCTO" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_IMAGEN" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_TIPO_PRODUCTO" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_EMPRESA" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOM_PRODUCTO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PRECIO" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="DESCRIPCION" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="crearProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crearProductoResult" type="tns:ProductoResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ProductoResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Response">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="objeto" type="tns:Producto" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Response" abstract="true">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="correcto" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="numero" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Autenticacion" type="tns:Autenticacion" />
+      <s:complexType name="Autenticacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="editarProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Producto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="editarProductoResult" type="tns:ProductoResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Producto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPrimeroProductoResult" type="tns:Producto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Producto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarProductoResult" type="tns:ArrayOfProducto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProducto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Producto" nillable="true" type="tns:Producto" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="buscarPaginacionProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Producto" />
+            <s:element minOccurs="1" maxOccurs="1" name="pag" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numReg" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPaginacionProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPaginacionProductoResult" type="tns:ArrayOfProducto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarProducto">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarProductoResult" type="tns:ArrayOfProducto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarPaginacionProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pag" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numReg" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarPaginacionProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarPaginacionProductoResult" type="tns:ArrayOfProducto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contarBusquedaProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Producto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contarBusquedaProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="contarBusquedaProductoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Producto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eliminarProductoResult" type="tns:ProductoResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="crearProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:crearProducto" />
+  </wsdl:message>
+  <wsdl:message name="crearProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:crearProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="crearProductoAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="editarProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:editarProducto" />
+  </wsdl:message>
+  <wsdl:message name="editarProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:editarProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="editarProductoAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroProducto" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroProductoAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="buscarProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarProducto" />
+  </wsdl:message>
+  <wsdl:message name="buscarProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarProductoAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPaginacionProducto" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPaginacionProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionProductoAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="listarProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:listarProducto" />
+  </wsdl:message>
+  <wsdl:message name="listarProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:listarProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarProductoAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:listarPaginacionProducto" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:listarPaginacionProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionProductoAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:contarBusquedaProducto" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:contarBusquedaProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaProductoAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="eliminarProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarProducto" />
+  </wsdl:message>
+  <wsdl:message name="eliminarProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarProductoAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:portType name="ServiciosProductoSoap">
+    <wsdl:operation name="crearProducto">
+      <wsdl:input message="tns:crearProductoSoapIn" />
+      <wsdl:output message="tns:crearProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="editarProducto">
+      <wsdl:input message="tns:editarProductoSoapIn" />
+      <wsdl:output message="tns:editarProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroProducto">
+      <wsdl:input message="tns:buscarPrimeroProductoSoapIn" />
+      <wsdl:output message="tns:buscarPrimeroProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarProducto">
+      <wsdl:input message="tns:buscarProductoSoapIn" />
+      <wsdl:output message="tns:buscarProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionProducto">
+      <wsdl:input message="tns:buscarPaginacionProductoSoapIn" />
+      <wsdl:output message="tns:buscarPaginacionProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarProducto">
+      <wsdl:input message="tns:listarProductoSoapIn" />
+      <wsdl:output message="tns:listarProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionProducto">
+      <wsdl:input message="tns:listarPaginacionProductoSoapIn" />
+      <wsdl:output message="tns:listarPaginacionProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaProducto">
+      <wsdl:input message="tns:contarBusquedaProductoSoapIn" />
+      <wsdl:output message="tns:contarBusquedaProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarProducto">
+      <wsdl:input message="tns:eliminarProductoSoapIn" />
+      <wsdl:output message="tns:eliminarProductoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiciosProductoSoap" type="tns:ServiciosProductoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearProducto">
+      <soap:operation soapAction="http://tempuri.org/crearProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:crearProductoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarProducto">
+      <soap:operation soapAction="http://tempuri.org/editarProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:editarProductoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroProducto">
+      <soap:operation soapAction="http://tempuri.org/buscarPrimeroProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:buscarPrimeroProductoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarProducto">
+      <soap:operation soapAction="http://tempuri.org/buscarProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:buscarProductoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionProducto">
+      <soap:operation soapAction="http://tempuri.org/buscarPaginacionProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:buscarPaginacionProductoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarProducto">
+      <soap:operation soapAction="http://tempuri.org/listarProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:listarProductoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionProducto">
+      <soap:operation soapAction="http://tempuri.org/listarPaginacionProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:listarPaginacionProductoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaProducto">
+      <soap:operation soapAction="http://tempuri.org/contarBusquedaProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:contarBusquedaProductoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarProducto">
+      <soap:operation soapAction="http://tempuri.org/eliminarProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:eliminarProductoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiciosProductoSoap12" type="tns:ServiciosProductoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearProducto">
+      <soap12:operation soapAction="http://tempuri.org/crearProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:crearProductoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarProducto">
+      <soap12:operation soapAction="http://tempuri.org/editarProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:editarProductoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroProducto">
+      <soap12:operation soapAction="http://tempuri.org/buscarPrimeroProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:buscarPrimeroProductoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarProducto">
+      <soap12:operation soapAction="http://tempuri.org/buscarProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:buscarProductoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionProducto">
+      <soap12:operation soapAction="http://tempuri.org/buscarPaginacionProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:buscarPaginacionProductoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarProducto">
+      <soap12:operation soapAction="http://tempuri.org/listarProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:listarProductoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionProducto">
+      <soap12:operation soapAction="http://tempuri.org/listarPaginacionProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:listarPaginacionProductoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaProducto">
+      <soap12:operation soapAction="http://tempuri.org/contarBusquedaProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:contarBusquedaProductoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarProducto">
+      <soap12:operation soapAction="http://tempuri.org/eliminarProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:eliminarProductoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosProducto">
+    <wsdl:port name="ServiciosProductoSoap" binding="tns:ServiciosProductoSoap">
+      <soap:address location="http://localhost:51390/Servicios/ServiciosProducto.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiciosProductoSoap12" binding="tns:ServiciosProductoSoap12">
+      <soap12:address location="http://localhost:51390/Servicios/ServiciosProducto.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

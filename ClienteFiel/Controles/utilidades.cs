@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace ClienteFiel.utilidades
+namespace Controles
 {
     public static class utilidades
     {

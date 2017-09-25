@@ -143,3 +143,4 @@ D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\C
 D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\ClienteFiel.csprojResolveAssemblyReference.cache
 D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\bin\Debug\Controles.dll
 D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\bin\Debug\Controles.pdb
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ClienteFiel\obj\Debug\ClienteFiel.modulos.configurar_producto.setProductos.resources

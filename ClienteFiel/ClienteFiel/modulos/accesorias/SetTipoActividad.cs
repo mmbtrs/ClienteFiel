@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using UtilidadesServiciosWeb;
-using static ClienteFiel.utilidades.utilidades;
 
 namespace ClienteFiel.modulos.accesorias
 {
@@ -16,17 +15,17 @@ namespace ClienteFiel.modulos.accesorias
     {
         ServiciosTipoactividad serviciosTipoactividad;
 
-        tipoOperacion operacion;
+        Controles.utilidades.tipoOperacion operacion;
         Tipoactividad tipoactividad;
 
-        public SetTipoActividad(tipoOperacion tmpOperacion, Tipoactividad tmpTipoAct)
+        public SetTipoActividad(Controles.utilidades.tipoOperacion tmpOperacion, Tipoactividad tmpTipoAct)
         {
             InitializeComponent();
             inicializarServicios();
             operacion = tmpOperacion;
             tipoactividad = tmpTipoAct;
             configuracionInicial();
-            fijarSize(this);
+            Controles.utilidades.fijarSize(this);
         }
 
         private void inicializarServicios()
@@ -46,7 +45,7 @@ namespace ClienteFiel.modulos.accesorias
         {
             try
             {
-                if (operacion == tipoOperacion.Insertar)
+                if (operacion == Controles.utilidades.tipoOperacion.Insertar)
                 {
                     this.Text = "Crear Nuevo Tipo de Actividad";
                     lblTituloVentana.Text = "Nuevo Tipo de Actividad";
@@ -125,7 +124,7 @@ namespace ClienteFiel.modulos.accesorias
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (operacion == tipoOperacion.Insertar)
+            if (operacion == Controles.utilidades.tipoOperacion.Insertar)
                 guardar();
             else
                 editar();

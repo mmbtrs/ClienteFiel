@@ -143,6 +143,12 @@
     <Compile Include="ctrImagen.Designer.cs">
       <DependentUpon>ctrImagen.cs</DependentUpon>
     </Compile>
+    <Compile Include="modulos\configurar_producto\setProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modulos\configurar_producto\setProductos.Designer.cs">
+      <DependentUpon>setProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="modulos\empresa\GestionEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,7 +188,6 @@
       <DependentUpon>ctrMunicipio.cs</DependentUpon>
     </Compile>
     <Compile Include="utilidades\Mensajes.cs" />
-    <Compile Include="utilidades\utilidades.cs" />
     <Compile Include="utilidades\VentanaImagen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +215,11 @@
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
     <Compile Include="Web References\WS_ServiciosMunicipio\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WS_ServiciosProducto\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -283,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ctrImagen.resx">
       <DependentUpon>ctrImagen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modulos\configurar_producto\setProductos.resx">
+      <DependentUpon>setProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modulos\empresa\GestionEmpresa.resx">
       <DependentUpon>GestionEmpresa.cs</DependentUpon>
@@ -380,6 +393,17 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Web References\WS_ServiciosMunicipio\ServiciosMunicipio.wsdl" />
+    <None Include="Web References\WS_ServiciosProducto\Producto.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ServiciosProducto\ProductoResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_ServiciosProducto\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS_ServiciosProducto\ServiciosProducto.wsdl" />
     <None Include="Web References\WS_ServiciosTipoactividad\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -633,6 +657,17 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>ClienteFiel_WS_ServiciosMunicipio_ServiciosMunicipio</CachedSettingsPropName>
     </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:51390/Servicios/ServiciosProducto.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_ServiciosProducto\</RelPath>
+      <UpdateFromURL>http://localhost:51390/Servicios/ServiciosProducto.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ClienteFiel_WS_ServiciosProducto_ServiciosProducto</CachedSettingsPropName>
+    </WebReferenceUrl>
     <WebReferenceUrl Include="http://localhost:51390/Servicios/ServiciosTipoactividad.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\WS_ServiciosTipoactividad\</RelPath>
@@ -885,7 +920,12 @@
   <ItemGroup>
     <None Include="Resources\removeImage2.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\productos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\WS_ServiciosProducto\ServiciosProducto.disco" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClienteFiel.utilidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,11 +10,17 @@ using System.Windows.Forms;
 
 namespace ClienteFiel.modulos.configurar_producto
 {
-    public partial class Productos : Form
+    public partial class Productos : BaseAccesorias
     {
         public Productos()
         {
             InitializeComponent();
+        }
+
+        private void btnInsertar_Click(object sender, EventArgs e)
+        {
+            setProductos frmProductos = new setProductos();
+            frmProductos.ShowDialog(this);
         }
     }
 }

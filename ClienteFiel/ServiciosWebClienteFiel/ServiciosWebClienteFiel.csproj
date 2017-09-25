@@ -302,6 +302,7 @@
     <Compile Include="ObjectsResponse\ErrorResponse.cs" />
     <Compile Include="ObjectsResponse\ImagenResponse.cs" />
     <Compile Include="ObjectsResponse\MunicipioResponse.cs" />
+    <Compile Include="ObjectsResponse\ProductoResponse.cs" />
     <Compile Include="ObjectsResponse\Response.cs" />
     <Compile Include="ObjectsResponse\TipoactividadResponse.cs" />
     <Compile Include="ObjectsResponse\TipoidentificacionResponse.cs" />

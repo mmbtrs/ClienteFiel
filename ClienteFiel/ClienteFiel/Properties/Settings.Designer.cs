@@ -122,5 +122,15 @@ namespace ClienteFiel.Properties {
                 return ((string)(this["ClienteFiel_WS_ServiciosEmpresa_ServiciosEmpresa"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:51390/Servicios/ServiciosProducto.asmx")]
+        public string ClienteFiel_WS_ServiciosProducto_ServiciosProducto {
+            get {
+                return ((string)(this["ClienteFiel_WS_ServiciosProducto_ServiciosProducto"]));
+            }
+        }
     }
 }

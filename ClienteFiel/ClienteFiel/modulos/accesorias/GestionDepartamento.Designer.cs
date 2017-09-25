@@ -55,7 +55,7 @@
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(409, 112);
+            this.panel2.Location = new System.Drawing.Point(456, 112);
             this.panel2.Size = new System.Drawing.Size(360, 53);
             // 
             // panel3
@@ -80,6 +80,7 @@
             // 
             // txtFiltro
             // 
+            this.txtFiltro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtFiltro.Location = new System.Drawing.Point(80, 131);
             this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 

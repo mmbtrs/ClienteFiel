@@ -9,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using UtilidadesServiciosWeb;
-using static ClienteFiel.utilidades.utilidades;
 
 namespace ClienteFiel.modulos.accesorias
 {
@@ -24,7 +23,7 @@ namespace ClienteFiel.modulos.accesorias
             inicializarServicios();
             cmbColumna.SelectedIndex = 0;
             getTipoProducto();
-            fijarSize(this);
+            Controles.utilidades.fijarSize(this);
         }
 
         private void getTipoProducto()
@@ -62,7 +61,7 @@ namespace ClienteFiel.modulos.accesorias
                         {
                         }
                     }
-                    utilidades.utilidades.setFormatGrid(grdTipoProducto);
+                    Controles.utilidades.setFormatGrid(grdTipoProducto);
                 }
             }
             catch (Exception exp)
@@ -128,7 +127,7 @@ namespace ClienteFiel.modulos.accesorias
 
         private void btnInsertar_Click(object sender, EventArgs e)
         {
-            SetTipoProducto setTipoProducto = new SetTipoProducto(tipoOperacion.Insertar, null);
+            SetTipoProducto setTipoProducto = new SetTipoProducto(Controles.utilidades.tipoOperacion.Insertar, null);
             setTipoProducto.ShowDialog(this);
             getTipoProducto();
         }
@@ -149,7 +148,7 @@ namespace ClienteFiel.modulos.accesorias
                     tmpTipo.ID_TIPO_PRODUCTO = long.Parse(grdTipoProducto.SelectedRows[0].Cells["ID_TIPO_PRODUCTO"].Value.ToString());
                     tmpTipo.NOM_TIPO_PRODUCTO = grdTipoProducto.SelectedRows[0].Cells["NOM_TIPO_PRODUCTO"].Value.ToString();
 
-                    SetTipoProducto setTipoProducto = new SetTipoProducto(tipoOperacion.Editar, tmpTipo);
+                    SetTipoProducto setTipoProducto = new SetTipoProducto(Controles.utilidades.tipoOperacion.Editar, tmpTipo);
                     setTipoProducto.ShowDialog(this);
                     getTipoProducto();
                 }
@@ -165,6 +164,11 @@ namespace ClienteFiel.modulos.accesorias
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             eliminarTipoProducto();
+        }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+            buscar();
         }
     }
 }

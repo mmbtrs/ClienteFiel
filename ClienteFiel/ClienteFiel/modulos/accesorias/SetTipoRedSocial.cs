@@ -9,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using UtilidadesServiciosWeb;
-using static ClienteFiel.utilidades.utilidades;
 
 namespace ClienteFiel.modulos.accesorias
 {
@@ -18,11 +17,11 @@ namespace ClienteFiel.modulos.accesorias
         ServiciosTiporedsocial serviciosTiporedsocial;
         ServiciosImagen serviciosImagen;
 
-        tipoOperacion operacion;
+        Controles.utilidades.tipoOperacion operacion;
         Tiporedsocial tipoRed;
         Imagen imagen;
 
-        public SetTipoRedSocial(tipoOperacion tmpOperacion, Tiporedsocial tmpTipo, Imagen tmpImagen)
+        public SetTipoRedSocial(Controles.utilidades.tipoOperacion tmpOperacion, Tiporedsocial tmpTipo, Imagen tmpImagen)
         {
             InitializeComponent();
             operacion = tmpOperacion;
@@ -30,7 +29,7 @@ namespace ClienteFiel.modulos.accesorias
             imagen = tmpImagen;
             configuracionInicial();
             inicializarServicios();
-            utilidades.utilidades.fijarSize(this);
+            Controles.utilidades.fijarSize(this);
         }
 
         private void inicializarServicios()
@@ -52,7 +51,7 @@ namespace ClienteFiel.modulos.accesorias
         {
             try
             {
-                if (operacion == tipoOperacion.Insertar)
+                if (operacion == Controles.utilidades.tipoOperacion.Insertar)
                 {
                     this.Text = "Crear Nueva Red Social";
                     lblTituloVentana.Text = "Nueva Red Social";
@@ -63,7 +62,7 @@ namespace ClienteFiel.modulos.accesorias
                     lblTituloVentana.Text = "Edición Red Social";
                     txtNombreTipoRed.Text = tipoRed.NOM_TIPO_RED_SOCIAL;
                     if (imagen.IMAGEN != null && imagen.IMAGEN.Length > 0)
-                        ctrLogo.setImage(utilidades.utilidades.byteToImagen(imagen.IMAGEN));
+                        ctrLogo.setImage(Controles.utilidades.byteToImagen(imagen.IMAGEN));
                     else
                         ctrLogo.setImage(null);
                 }
@@ -125,7 +124,7 @@ namespace ClienteFiel.modulos.accesorias
             try
             {
                 Imagen objImagen = new Imagen();
-                objImagen.IMAGEN = utilidades.utilidades.ImageToByte(ctrLogo.getImage());
+                objImagen.IMAGEN = Controles.utilidades.ImageToByte(ctrLogo.getImage());
                 if (imagen != null && imagen.ID_IMAGEN > 0)
                 {
                     objImagen.ID_IMAGEN = imagen.ID_IMAGEN;
@@ -244,7 +243,7 @@ namespace ClienteFiel.modulos.accesorias
             try
             {
                 Imagen objImagen = new Imagen();
-                objImagen.IMAGEN = utilidades.utilidades.ImageToByte(ctrLogo.getImage());
+                objImagen.IMAGEN = Controles.utilidades.ImageToByte(ctrLogo.getImage());
                 objResponse = serviciosImagen.crearImagen(objImagen);
                 return objResponse;
             }
@@ -272,7 +271,7 @@ namespace ClienteFiel.modulos.accesorias
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (operacion == tipoOperacion.Insertar)
+            if (operacion == Controles.utilidades.tipoOperacion.Insertar)
                 guardar();
             else
                 editar();

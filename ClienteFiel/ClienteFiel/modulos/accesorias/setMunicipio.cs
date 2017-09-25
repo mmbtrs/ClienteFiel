@@ -9,18 +9,17 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using UtilidadesServiciosWeb;
-using static ClienteFiel.utilidades.utilidades;
 
 namespace ClienteFiel.modulos.accesorias
 {
     public partial class setMunicipio : Form
     {
         ServiciosMunicipio serviciosMunicipio;
-        tipoOperacion operacion;
+        Controles.utilidades.tipoOperacion operacion;
         Municipio municipio;
         Departamento departamento;
 
-        public setMunicipio(tipoOperacion tmpOperacion, Municipio tmpMunicipio, Departamento tmpDpto)
+        public setMunicipio(Controles.utilidades.tipoOperacion tmpOperacion, Municipio tmpMunicipio, Departamento tmpDpto)
         {
             InitializeComponent();
             inicializarServicios();
@@ -28,14 +27,14 @@ namespace ClienteFiel.modulos.accesorias
             operacion = tmpOperacion;
             departamento = tmpDpto;
             configuracionInicial();
-            fijarSize(this);
+            Controles.utilidades.fijarSize(this);
         }
 
         private void configuracionInicial()
         {
             try
             {
-                if (operacion == tipoOperacion.Insertar)
+                if (operacion == Controles.utilidades.tipoOperacion.Insertar)
                 {
                     this.Text = "Crear Nuevo Municipio";
                     lblTituloVentana.Text = "Nuevo Municipio";
@@ -130,7 +129,7 @@ namespace ClienteFiel.modulos.accesorias
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (operacion == tipoOperacion.Insertar)
+            if (operacion == Controles.utilidades.tipoOperacion.Insertar)
                 guardar();
             else
                 editar();
