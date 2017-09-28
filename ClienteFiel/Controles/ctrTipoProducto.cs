@@ -17,7 +17,11 @@ namespace Controles
 
         public ctrTipoProducto()
         {
-            InitializeComponent();
+            InitializeComponent();           
+        }
+
+        public void iniciar()
+        {
             inicializarServicios();
             getTiposProductos();
         }

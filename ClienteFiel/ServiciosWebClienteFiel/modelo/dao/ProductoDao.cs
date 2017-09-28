@@ -34,13 +34,12 @@ partial class ProductoDao {
 		String sql = "";
 		SqlCommand stmt = null;
 		try {
-			sql = "INSERT INTO PRODUCTO ( ID_PRODUCTO,"+
+			sql = "INSERT INTO PRODUCTO ( "+
 			" ID_IMAGEN, ID_TIPO_PRODUCTO, ID_EMPRESA,"+
 			" NOM_PRODUCTO, PRECIO, DESCRIPCION"+
 			")"+
-			 "VALUES ( @ID_PRODUCTO, @ID_IMAGEN, @ID_TIPO_PRODUCTO, @ID_EMPRESA, @NOM_PRODUCTO, @PRECIO, @DESCRIPCION)";
+			 "VALUES ( @ID_IMAGEN, @ID_TIPO_PRODUCTO, @ID_EMPRESA, @NOM_PRODUCTO, @PRECIO, @DESCRIPCION)";
 			stmt = new SqlCommand(sql, conn);
-			stmt.Parameters.AddWithValue("@ID_PRODUCTO", valueObject.ID_PRODUCTO);
 				if(valueObject.ID_IMAGEN!=0)
 					stmt.Parameters.AddWithValue("@ID_IMAGEN", valueObject.ID_IMAGEN);
 				else

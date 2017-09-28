@@ -75,6 +75,8 @@
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLogo.TabIndex = 16;
             this.picLogo.TabStop = false;
+            this.picLogo.DragDrop += new System.Windows.Forms.DragEventHandler(this.picLogo_DragDrop);
+            this.picLogo.DragEnter += new System.Windows.Forms.DragEventHandler(this.picLogo_DragEnter);
             // 
             // ctrImagen
             // 

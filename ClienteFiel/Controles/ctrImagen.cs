@@ -14,6 +14,7 @@ namespace Controles
         public ctrImagen()
         {
             InitializeComponent();
+            picLogo.AllowDrop = true;
         }
 
         private void btnLoadImage_Click(object sender, EventArgs e)
@@ -51,6 +52,42 @@ namespace Controles
         public void setImage(Image img)
         {
             picLogo.Image = img;
+        }
+
+        private void picLogo_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.All;
+        }
+
+        private void picLogo_DragDrop(object sender, DragEventArgs e)
+        {
+            String[] files = (String[])e.Data.GetData(DataFormats.FileDrop, false);
+
+            if (files != null && files.Length > 1)
+            {
+                foreach (var file in files)
+                {
+                    MessageBox.Show(file);
+                    try
+                    {
+                        picLogo.Image = Image.FromFile(file);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("El archivo " + file + " no es un archivo de imagen valido", "Archivo no valido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+                try
+                {
+                    picLogo.Image = Image.FromFile(files[0]);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("El archivo " + files[0] + " no es un archivo de imagen valido", "Archivo no valido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
         }
     }
 }

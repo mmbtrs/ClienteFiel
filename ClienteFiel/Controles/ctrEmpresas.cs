@@ -20,6 +20,10 @@ namespace Controles
         public ctrEmpresas()
         {
             InitializeComponent();
+        }
+
+        public void iniciar()
+        {
             inicializarServicios();
             getEmpresas();
             cmbColumna.SelectedIndex = 0;
