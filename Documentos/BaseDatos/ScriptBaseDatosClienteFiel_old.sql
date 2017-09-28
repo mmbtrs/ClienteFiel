@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2008                    */
-/* Created on:     28/09/2017 7:37:30 a.m.                      */
+/* Created on:     30/07/2017 6:40:59                           */
 /*==============================================================*/
 
 
@@ -648,13 +648,6 @@ if exists (select 1
            where  id = object_id('ROL_OPCION')
             and   type = 'U')
    drop table ROL_OPCION
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('SECUENCIAS')
-            and   type = 'U')
-   drop table SECUENCIAS
 go
 
 if exists (select 1
@@ -3364,7 +3357,7 @@ create table PRODUCTO (
    PRECIO               DOMAIN_VALOR         not null,
    DESCRIPCION          varchar(8000)        null,
    constraint PK_PRODUCTO primary key nonclustered (ID_PRODUCTO),
-   constraint AK_NOM_PRODUCTO_PRODUCTO unique (NOM_PRODUCTO, ID_EMPRESA)
+   constraint AK_NOM_PRODUCTO_PRODUCTO unique (NOM_PRODUCTO)
 )
 go
 
@@ -3813,91 +3806,6 @@ go
 create index ROL_ROL_OPCION_FK on ROL_OPCION (
 ID_ROL ASC
 )
-go
-
-/*==============================================================*/
-/* Table: SECUENCIAS                                            */
-/*==============================================================*/
-create table SECUENCIAS (
-   ID_SECUENCIAS        numeric              identity(0,1),
-   TABLA                varchar(50)          not null,
-   VALOR                numeric              not null,
-   constraint PK_SECUENCIAS primary key (ID_SECUENCIAS)
-)
-go
-
-if exists (select 1 from  sys.extended_properties
-           where major_id = object_id('SECUENCIAS') and minor_id = 0)
-begin 
-   declare @CurrentUser sysname 
-select @CurrentUser = user_name() 
-execute sp_dropextendedproperty 'MS_Description',  
-   'user', @CurrentUser, 'table', 'SECUENCIAS' 
- 
-end 
-
-
-select @CurrentUser = user_name() 
-execute sp_addextendedproperty 'MS_Description',  
-   'SECUENCIAS', 
-   'user', @CurrentUser, 'table', 'SECUENCIAS'
-go
-
-if exists(select 1 from sys.extended_properties p where
-      p.major_id = object_id('SECUENCIAS')
-  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'ID_SECUENCIAS')
-)
-begin
-   declare @CurrentUser sysname
-select @CurrentUser = user_name()
-execute sp_dropextendedproperty 'MS_Description', 
-   'user', @CurrentUser, 'table', 'SECUENCIAS', 'column', 'ID_SECUENCIAS'
-
-end
-
-
-select @CurrentUser = user_name()
-execute sp_addextendedproperty 'MS_Description', 
-   'ID_SECUENCIAS',
-   'user', @CurrentUser, 'table', 'SECUENCIAS', 'column', 'ID_SECUENCIAS'
-go
-
-if exists(select 1 from sys.extended_properties p where
-      p.major_id = object_id('SECUENCIAS')
-  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'TABLA')
-)
-begin
-   declare @CurrentUser sysname
-select @CurrentUser = user_name()
-execute sp_dropextendedproperty 'MS_Description', 
-   'user', @CurrentUser, 'table', 'SECUENCIAS', 'column', 'TABLA'
-
-end
-
-
-select @CurrentUser = user_name()
-execute sp_addextendedproperty 'MS_Description', 
-   'TABLA',
-   'user', @CurrentUser, 'table', 'SECUENCIAS', 'column', 'TABLA'
-go
-
-if exists(select 1 from sys.extended_properties p where
-      p.major_id = object_id('SECUENCIAS')
-  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'VALOR')
-)
-begin
-   declare @CurrentUser sysname
-select @CurrentUser = user_name()
-execute sp_dropextendedproperty 'MS_Description', 
-   'user', @CurrentUser, 'table', 'SECUENCIAS', 'column', 'VALOR'
-
-end
-
-
-select @CurrentUser = user_name()
-execute sp_addextendedproperty 'MS_Description', 
-   'VALOR',
-   'user', @CurrentUser, 'table', 'SECUENCIAS', 'column', 'VALOR'
 go
 
 /*==============================================================*/
