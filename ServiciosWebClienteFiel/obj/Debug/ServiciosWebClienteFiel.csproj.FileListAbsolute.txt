@@ -1,0 +1,136 @@
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\ApplicationInsights.config
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\ServiciosWebClienteFiel.dll.config
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\ServiciosWebClienteFiel.dll
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\ServiciosWebClienteFiel.pdb
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.AI.DependencyCollector.dll
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.AI.Web.dll
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.AI.WindowsServer.dll
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.ApplicationInsights.dll
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.Diagnostics.Tracing.EventSource.dll
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.Threading.Tasks.dll
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.Threading.Tasks.Extensions.dll
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\System.IO.dll
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\System.Runtime.dll
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\System.Threading.Tasks.dll
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.AI.DependencyCollector.xml
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.AI.Web.xml
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.AI.WindowsServer.xml
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.ApplicationInsights.xml
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.Diagnostics.Tracing.EventSource.xml
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.Threading.Tasks.xml
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.Threading.Tasks.Extensions.xml
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\System.IO.xml
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\System.Runtime.xml
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\System.Threading.Tasks.xml
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\obj\Debug\ServiciosWebClienteFiel.csproj.App.config
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\obj\Debug\ServiciosWebClienteFiel.csprojResolveAssemblyReference.cache
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\obj\Debug\ServiciosWebClienteFiel.dll
+D:\Repositorio\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\obj\Debug\ServiciosWebClienteFiel.pdb
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\bin\ApplicationInsights.config
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\bin\ServiciosWebClienteFiel.dll.config
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\bin\ServiciosWebClienteFiel.dll
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\bin\ServiciosWebClienteFiel.pdb
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\bin\Microsoft.AI.DependencyCollector.dll
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\bin\Microsoft.AI.Web.dll
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\bin\Microsoft.AI.WindowsServer.dll
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\bin\Microsoft.ApplicationInsights.dll
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\bin\Microsoft.Diagnostics.Tracing.EventSource.dll
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\bin\Microsoft.Threading.Tasks.dll
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\bin\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\bin\Microsoft.Threading.Tasks.Extensions.dll
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\bin\System.IO.dll
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\bin\System.Runtime.dll
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\bin\System.Threading.Tasks.dll
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\bin\Microsoft.AI.DependencyCollector.xml
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\bin\Microsoft.AI.Web.xml
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\bin\Microsoft.AI.WindowsServer.xml
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\bin\Microsoft.ApplicationInsights.xml
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\bin\Microsoft.Diagnostics.Tracing.EventSource.xml
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\bin\Microsoft.Threading.Tasks.xml
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\bin\Microsoft.Threading.Tasks.Extensions.xml
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\bin\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\bin\System.IO.xml
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\bin\System.Runtime.xml
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\bin\System.Threading.Tasks.xml
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\obj\Debug\ServiciosWebClienteFiel.csproj.App.config
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\obj\Debug\ServiciosWebClienteFiel.csprojResolveAssemblyReference.cache
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\obj\Debug\ServiciosWebClienteFiel.dll
+D:\Repositorio\ClienteFiel\ClienteFiel - Black\ServiciosWebClienteFiel\obj\Debug\ServiciosWebClienteFiel.pdb
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\ApplicationInsights.config
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\ServiciosWebClienteFiel.dll.config
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\ServiciosWebClienteFiel.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\ServiciosWebClienteFiel.pdb
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.AI.DependencyCollector.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.AI.Web.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.AI.WindowsServer.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.ApplicationInsights.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.Diagnostics.Tracing.EventSource.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.Threading.Tasks.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.Threading.Tasks.Extensions.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\System.IO.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\System.Runtime.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\System.Threading.Tasks.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.AI.DependencyCollector.xml
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.AI.Web.xml
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.AI.WindowsServer.xml
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.ApplicationInsights.xml
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.Diagnostics.Tracing.EventSource.xml
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.Threading.Tasks.xml
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.Threading.Tasks.Extensions.xml
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\System.IO.xml
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\System.Runtime.xml
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\bin\System.Threading.Tasks.xml
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\obj\Debug\ServiciosWebClienteFiel.csproj.App.config
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\obj\Debug\ServiciosWebClienteFiel.csprojResolveAssemblyReference.cache
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\obj\Debug\ServiciosWebClienteFiel.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ClienteFiel\ServiciosWebClienteFiel\obj\Debug\ServiciosWebClienteFiel.pdb
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\bin\ApplicationInsights.config
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\bin\ServiciosWebClienteFiel.dll.config
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\bin\ServiciosWebClienteFiel.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\bin\ServiciosWebClienteFiel.pdb
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.AI.DependencyCollector.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.AI.Web.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.AI.WindowsServer.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.ApplicationInsights.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.Diagnostics.Tracing.EventSource.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.Threading.Tasks.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.Threading.Tasks.Extensions.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\bin\System.IO.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\bin\System.Runtime.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\bin\System.Threading.Tasks.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.AI.DependencyCollector.xml
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.AI.Web.xml
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.AI.WindowsServer.xml
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.ApplicationInsights.xml
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.Diagnostics.Tracing.EventSource.xml
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.Threading.Tasks.xml
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.Threading.Tasks.Extensions.xml
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\bin\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\bin\System.IO.xml
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\bin\System.Runtime.xml
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\bin\System.Threading.Tasks.xml
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\obj\Debug\ServiciosWebClienteFiel.csproj.App.config
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\obj\Debug\ServiciosWebClienteFiel.csprojResolveAssemblyReference.cache
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\obj\Debug\ServiciosWebClienteFiel.dll
+D:\Repositorio\RepositorioGitHub\ClienteFiel\ServiciosWebClienteFiel\obj\Debug\ServiciosWebClienteFiel.pdb

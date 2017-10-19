@@ -1,0 +1,16 @@
+CREATE TABLE CLIENTE (
+ID_CLIENTE numeric ,
+ID_EMPRESA numeric ,
+ID_IMAGEN numeric ,
+ID_TIPO_IDENTIFICACION numeric ,
+ID_CODIGO_QR numeric ,
+IDENTIFICACION varchar (50),
+NOMBRES varchar (50),
+APELLIDOS varchar (50),
+CORREO varchar (100),
+DIRECCION_CLIENTE varchar (300),
+TELEFONO varchar (100),
+FECHA_NACIMIENTO datetime ,
+SEXO varchar (1),
+CONSTRAINT PRIMARY KEY(ID_CLIENTE)
+)

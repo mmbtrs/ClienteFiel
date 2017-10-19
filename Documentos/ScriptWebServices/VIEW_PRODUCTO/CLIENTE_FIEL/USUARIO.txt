@@ -1,0 +1,21 @@
+CREATE TABLE USUARIO (
+ID_USUARIO numeric ,
+ID_TIPO_IDENTIFICACION numeric ,
+ID_EMPRESA numeric ,
+ID_IMAGEN numeric ,
+ID_ROL numeric ,
+IDENTIFICACION varchar (50),
+NOMBRES varchar (50),
+APELLIDOS varchar (50),
+CORREO varchar (100),
+DIRECCION varchar (300),
+TELEFONO varchar (100),
+LOGIN varchar (500),
+PASSWORD varchar (100),
+FECHA_NACIMIENTO datetime ,
+SEXO varchar (1),
+ESTADO varchar (1),
+FECHA_INGRESO datetime ,
+FECHA_RETIRO datetime ,
+CONSTRAINT PRIMARY KEY(ID_USUARIO)
+)

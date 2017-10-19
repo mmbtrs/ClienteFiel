@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="crearDepartamento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Departamento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Departamento">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_DEPARTAMENTO" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOM_DEPARTAMENTO" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="crearDepartamentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crearDepartamentoResult" type="tns:DepartamentoResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DepartamentoResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Response">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="objeto" type="tns:Departamento" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Response" abstract="true">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="correcto" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="numero" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Autenticacion" type="tns:Autenticacion" />
+      <s:complexType name="Autenticacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="editarDepartamento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Departamento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarDepartamentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="editarDepartamentoResult" type="tns:DepartamentoResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroDepartamento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Departamento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroDepartamentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPrimeroDepartamentoResult" type="tns:Departamento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarDepartamento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Departamento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarDepartamentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarDepartamentoResult" type="tns:ArrayOfDepartamento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDepartamento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Departamento" nillable="true" type="tns:Departamento" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="buscarPaginacionDepartamento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Departamento" />
+            <s:element minOccurs="1" maxOccurs="1" name="pag" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numReg" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPaginacionDepartamentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPaginacionDepartamentoResult" type="tns:ArrayOfDepartamento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarDepartamento">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarDepartamentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarDepartamentoResult" type="tns:ArrayOfDepartamento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarPaginacionDepartamento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pag" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numReg" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarPaginacionDepartamentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarPaginacionDepartamentoResult" type="tns:ArrayOfDepartamento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contarBusquedaDepartamento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Departamento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contarBusquedaDepartamentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="contarBusquedaDepartamentoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarDepartamento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Departamento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarDepartamentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eliminarDepartamentoResult" type="tns:DepartamentoResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="crearDepartamentoSoapIn">
+    <wsdl:part name="parameters" element="tns:crearDepartamento" />
+  </wsdl:message>
+  <wsdl:message name="crearDepartamentoSoapOut">
+    <wsdl:part name="parameters" element="tns:crearDepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="crearDepartamentoAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="editarDepartamentoSoapIn">
+    <wsdl:part name="parameters" element="tns:editarDepartamento" />
+  </wsdl:message>
+  <wsdl:message name="editarDepartamentoSoapOut">
+    <wsdl:part name="parameters" element="tns:editarDepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="editarDepartamentoAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroDepartamentoSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroDepartamento" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroDepartamentoSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroDepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroDepartamentoAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="buscarDepartamentoSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarDepartamento" />
+  </wsdl:message>
+  <wsdl:message name="buscarDepartamentoSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarDepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarDepartamentoAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionDepartamentoSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPaginacionDepartamento" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionDepartamentoSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPaginacionDepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionDepartamentoAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="listarDepartamentoSoapIn">
+    <wsdl:part name="parameters" element="tns:listarDepartamento" />
+  </wsdl:message>
+  <wsdl:message name="listarDepartamentoSoapOut">
+    <wsdl:part name="parameters" element="tns:listarDepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarDepartamentoAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionDepartamentoSoapIn">
+    <wsdl:part name="parameters" element="tns:listarPaginacionDepartamento" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionDepartamentoSoapOut">
+    <wsdl:part name="parameters" element="tns:listarPaginacionDepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionDepartamentoAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaDepartamentoSoapIn">
+    <wsdl:part name="parameters" element="tns:contarBusquedaDepartamento" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaDepartamentoSoapOut">
+    <wsdl:part name="parameters" element="tns:contarBusquedaDepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaDepartamentoAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:message name="eliminarDepartamentoSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarDepartamento" />
+  </wsdl:message>
+  <wsdl:message name="eliminarDepartamentoSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarDepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarDepartamentoAutenticacion">
+    <wsdl:part name="Autenticacion" element="tns:Autenticacion" />
+  </wsdl:message>
+  <wsdl:portType name="ServiciosDepartamentoSoap">
+    <wsdl:operation name="crearDepartamento">
+      <wsdl:input message="tns:crearDepartamentoSoapIn" />
+      <wsdl:output message="tns:crearDepartamentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="editarDepartamento">
+      <wsdl:input message="tns:editarDepartamentoSoapIn" />
+      <wsdl:output message="tns:editarDepartamentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroDepartamento">
+      <wsdl:input message="tns:buscarPrimeroDepartamentoSoapIn" />
+      <wsdl:output message="tns:buscarPrimeroDepartamentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarDepartamento">
+      <wsdl:input message="tns:buscarDepartamentoSoapIn" />
+      <wsdl:output message="tns:buscarDepartamentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionDepartamento">
+      <wsdl:input message="tns:buscarPaginacionDepartamentoSoapIn" />
+      <wsdl:output message="tns:buscarPaginacionDepartamentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarDepartamento">
+      <wsdl:input message="tns:listarDepartamentoSoapIn" />
+      <wsdl:output message="tns:listarDepartamentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionDepartamento">
+      <wsdl:input message="tns:listarPaginacionDepartamentoSoapIn" />
+      <wsdl:output message="tns:listarPaginacionDepartamentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaDepartamento">
+      <wsdl:input message="tns:contarBusquedaDepartamentoSoapIn" />
+      <wsdl:output message="tns:contarBusquedaDepartamentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarDepartamento">
+      <wsdl:input message="tns:eliminarDepartamentoSoapIn" />
+      <wsdl:output message="tns:eliminarDepartamentoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiciosDepartamentoSoap" type="tns:ServiciosDepartamentoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearDepartamento">
+      <soap:operation soapAction="http://tempuri.org/crearDepartamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:crearDepartamentoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarDepartamento">
+      <soap:operation soapAction="http://tempuri.org/editarDepartamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:editarDepartamentoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroDepartamento">
+      <soap:operation soapAction="http://tempuri.org/buscarPrimeroDepartamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:buscarPrimeroDepartamentoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarDepartamento">
+      <soap:operation soapAction="http://tempuri.org/buscarDepartamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:buscarDepartamentoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionDepartamento">
+      <soap:operation soapAction="http://tempuri.org/buscarPaginacionDepartamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:buscarPaginacionDepartamentoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarDepartamento">
+      <soap:operation soapAction="http://tempuri.org/listarDepartamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:listarDepartamentoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionDepartamento">
+      <soap:operation soapAction="http://tempuri.org/listarPaginacionDepartamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:listarPaginacionDepartamentoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaDepartamento">
+      <soap:operation soapAction="http://tempuri.org/contarBusquedaDepartamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:contarBusquedaDepartamentoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarDepartamento">
+      <soap:operation soapAction="http://tempuri.org/eliminarDepartamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:eliminarDepartamentoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiciosDepartamentoSoap12" type="tns:ServiciosDepartamentoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearDepartamento">
+      <soap12:operation soapAction="http://tempuri.org/crearDepartamento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:crearDepartamentoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarDepartamento">
+      <soap12:operation soapAction="http://tempuri.org/editarDepartamento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:editarDepartamentoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroDepartamento">
+      <soap12:operation soapAction="http://tempuri.org/buscarPrimeroDepartamento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:buscarPrimeroDepartamentoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarDepartamento">
+      <soap12:operation soapAction="http://tempuri.org/buscarDepartamento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:buscarDepartamentoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionDepartamento">
+      <soap12:operation soapAction="http://tempuri.org/buscarPaginacionDepartamento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:buscarPaginacionDepartamentoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarDepartamento">
+      <soap12:operation soapAction="http://tempuri.org/listarDepartamento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:listarDepartamentoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionDepartamento">
+      <soap12:operation soapAction="http://tempuri.org/listarPaginacionDepartamento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:listarPaginacionDepartamentoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaDepartamento">
+      <soap12:operation soapAction="http://tempuri.org/contarBusquedaDepartamento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:contarBusquedaDepartamentoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarDepartamento">
+      <soap12:operation soapAction="http://tempuri.org/eliminarDepartamento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:eliminarDepartamentoAutenticacion" part="Autenticacion" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosDepartamento">
+    <wsdl:port name="ServiciosDepartamentoSoap" binding="tns:ServiciosDepartamentoSoap">
+      <soap:address location="http://localhost:51390/Servicios/ServiciosDepartamento.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiciosDepartamentoSoap12" binding="tns:ServiciosDepartamentoSoap12">
+      <soap12:address location="http://localhost:51390/Servicios/ServiciosDepartamento.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

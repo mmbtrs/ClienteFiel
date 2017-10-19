@@ -1,0 +1,14 @@
+CREATE TABLE HISTORIAL (
+ID_HISTORIAL numeric ,
+ID_CLIENTE numeric ,
+ID_IMAGEN numeric ,
+ID_HISTORIAL_DESCUENTO numeric ,
+ID_USUARIO numeric ,
+FECHA datetime ,
+HORA datetime ,
+NUM_FACTURA_VISITA varchar (100),
+VALOR_FACTURA numeric ,
+ORIGEN varchar (1),
+ESTADO varchar (1),
+CONSTRAINT PRIMARY KEY(ID_HISTORIAL)
+)

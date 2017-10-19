@@ -1,0 +1,14 @@
+CREATE TABLE EMPRESA (
+ID_EMPRESA numeric ,
+ID_MUNICIPIO numeric ,
+ID_IMAGEN numeric ,
+NIT varchar (20),
+RAZON_SOCIAL varchar (500),
+DIRECCION_CLIENTE varchar (300),
+TELEFONO varchar (100),
+SLOGAN varchar (500),
+LATITUD varchar (20),
+LONGITUD varchar (20),
+SUCURSAL varchar (100),
+CONSTRAINT PRIMARY KEY(ID_EMPRESA)
+)
